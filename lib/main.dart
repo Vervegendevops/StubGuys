@@ -5,7 +5,7 @@ import 'Screens/Authentication/Login.dart';
 import 'Screens/OnBoardings/OnboardingScreen.dart';
 import 'Screens/PickInterest/picInterest.dart';
 import 'Screens/Splashes/SplashWelcome.dart';
-
+// I am Dell
 void main() {
   runApp(const MyApp());
 }
