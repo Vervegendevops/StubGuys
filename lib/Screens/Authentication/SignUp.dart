@@ -1,6 +1,7 @@
+import 'package:stub_guys/Screens/Authentication/Login.dart';
+import 'package:stub_guys/Screens/Authentication/OTP.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:stub_guys/Screens/Authentication/Login.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -30,7 +31,7 @@ class _SignUpState extends State<SignUp> {
           // White Container with Login and Password
           // Positioned with top left and top right border radius
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.243,
+            top: MediaQuery.of(context).size.height * 0.27,
             left: 0,
             right: 0,
             bottom: 0,
@@ -158,7 +159,13 @@ class _SignUpState extends State<SignUp> {
                           height: MediaQuery.of(context).size.height * 0.04,
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const otp()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.zero,
                             shape: RoundedRectangleBorder(
@@ -187,7 +194,7 @@ class _SignUpState extends State<SignUp> {
                         Row(
                           children: [
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.4,
+                              width: MediaQuery.of(context).size.width * 0.39,
                               child: const Divider(
                                 color: Color.fromARGB(255, 205, 205, 205),
                                 thickness: 1,
@@ -204,7 +211,7 @@ class _SignUpState extends State<SignUp> {
                               textAlign: TextAlign.left,
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.4,
+                              width: MediaQuery.of(context).size.width * 0.39,
                               child: const Divider(
                                 color: Color.fromARGB(255, 205, 205, 205),
                                 thickness: 1,
@@ -235,49 +242,48 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.035,
                   ),
-                  Positioned(
-                    bottom: 0,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFDEFBB8),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.075,
+              decoration: const BoxDecoration(
+                color: Color(0xFFDEFBB8),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account? ",
+                    style: TextStyle(
+                      // fontFamily: "Satoshi",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      height: 22 / 16,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Login()),
+                      );
+                    },
+                    child: Text(
+                      "Sign in",
+                      style: TextStyle(
+                        // fontFamily: "Satoshi",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 22 / 16,
+                        color: Color(0xff8dc73f),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Already have an account? ",
-                            style: TextStyle(
-                              // fontFamily: "Satoshi",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              height: 22 / 16,
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Login()),
-                              );
-                            },
-                            child: Text(
-                              "Sign in",
-                              style: TextStyle(
-                                // fontFamily: "Satoshi",
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 22 / 16,
-                                color: Color(0xff8dc73f),
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                        ],
-                      ),
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ],

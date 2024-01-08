@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stub_guys/Screens/%20EventDetails/Components/ChoosePaymentMeth.dart';
+import 'package:stub_guys/Screens/%20EventDetails/Components/CircleImage.dart';
+import 'package:stub_guys/Screens/%20EventDetails/GetTickets/Step1.dart';
+import 'package:stub_guys/Screens/%20EventDetails/LocationFeatures/LocationRow.dart';
 import 'Components/Agenda.dart';
 import 'Components/HorizontalImage.dart';
 import 'Components/Sponsors.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
 
 class EventDetails extends StatefulWidget {
   const EventDetails({super.key});
@@ -111,15 +116,15 @@ class _EventDetailsState extends State<EventDetails> {
                               children: [
                                 SizedBox(
                                   height:
-                                      MediaQuery.of(context).size.height * 0.1,
+                                      MediaQuery.of(context).size.height * 0.07,
                                 ),
                                 Container(
                                   child: SvgPicture.asset(
                                       'Assets/Images/Components/playbutton.svg'),
                                 ),
                                 SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.01,
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
                                 ),
                                 const Text(
                                   "Watch Video",
@@ -130,10 +135,27 @@ class _EventDetailsState extends State<EventDetails> {
                                 ),
                                 SizedBox(
                                   height:
-                                      MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.04,
                                 ),
-                                SvgPicture.asset(
-                                    'Assets/Images/Components/sponsored.svg'),
+                                const Padding(
+                                  padding:
+                                      EdgeInsets.only(left: 17.0, right: 10.0),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          "Unleash Africa's Future with Bill Gates.",
+                                          style: TextStyle(
+                                            height: 1.2,
+                                            fontSize: 34,
+                                            color: Colors.white,
+                                            fontFamily: 'SatoshiRegular',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             )
                           ],
@@ -150,135 +172,8 @@ class _EventDetailsState extends State<EventDetails> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.01,
                         ),
-                        const Text(
-                          "Unleashing Africa’s Future with Bill Gates",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Color(0xFF201335),
-                            fontFamily: 'SatoshiBold',
-                          ),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.02,
-                        ),
 
                         // Timing Section
-                        Row(
-                          children: [
-                            Stack(
-                              alignment: Alignment.center,
-                              // Center the children within the Stack
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.16,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.08,
-                                  color: const Color(0xFF8DC73F),
-                                ),
-                                const Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  // Center the Column vertically
-                                  children: [
-                                    Text(
-                                      "30",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontFamily: 'SatoshiBold',
-                                      ),
-                                    ),
-                                    Text(
-                                      "June",
-                                      style: TextStyle(
-                                        fontSize: 13,
-                                        color: Colors.white,
-                                        fontFamily: 'SatoshiRegular',
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-
-                            // Timing Section
-                            Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.4,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.08,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      "Time",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color(0xFF696D61),
-                                        fontFamily: 'SatoshiRegular',
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.001,
-                                    ),
-                                    const Text(
-                                      "10:00 AM - 01:00PM",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xFF696D61),
-                                        fontFamily: 'SatoshiMedium',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                            Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.3,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.08,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      "Price",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color(0xFF696D61),
-                                        fontFamily: 'SatoshiRegular',
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.001,
-                                    ),
-                                    const Text(
-                                      "25.00",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xFF696D61),
-                                        fontFamily: 'SatoshiMedium',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.04,
-                        ),
 
                         /*Follow section*/
                         Row(
@@ -297,8 +192,9 @@ class _EventDetailsState extends State<EventDetails> {
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.08,
+                              width: MediaQuery.of(context).size.width * 0.1,
                             ),
+                            Expanded(child: Container()),
                             Container(
                               width: 100.0, // Customize the width
                               height: 40.0, // Customize the height
@@ -321,6 +217,180 @@ class _EventDetailsState extends State<EventDetails> {
                                 ),
                               ),
                             )
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.04,
+                        ),
+                        // Location and timing
+                        Row(
+                          children: [
+                            Container(
+                              color: const Color(0xFF8DC73F),
+                              width: 70,
+                              height: 70,
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "30",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontFamily: 'SatoshiBold',
+                                    ),
+                                  ),
+                                  Text(
+                                    "June",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                      fontFamily: 'SatoshiMedium',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // First Row
+                                  Row(
+                                    children: [
+                                      Icon(OMIcons.locationOn,
+                                          color: Color(0xFF8DC73F)),
+                                      // Replace with your desired icon
+                                      SizedBox(width: 8.0),
+                                      // Adjust spacing as needed
+                                      Text(
+                                        "Lagos Business School, Ikeja, Lagos",
+                                        style: TextStyle(
+                                          height: 1.2,
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                          fontFamily: 'SatoshiRegular',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  // Adjust vertical spacing as needed
+
+                                  // Second Row
+                                  Row(
+                                    children: [
+                                      Icon(OMIcons.accessTime,
+                                          color: Color(0xFF8DC73F)),
+                                      // Replace with your desired icon
+                                      SizedBox(width: 8.0),
+                                      // Adjust spacing as needed
+                                      Text(
+                                        "10:00 AM - 01:00PM",
+                                        style: TextStyle(
+                                          height: 1.2,
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                          fontFamily: 'SatoshiRegular',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.04,
+                        ),
+                        Row(
+                          children: [
+                            Stack(
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 0.0),
+                                  child: CircleImage(
+                                    imageUrl:
+                                        'https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=996&t=st=1703761933~exp=1703762533~hmac=0b2208829e4e0177b9bde0a69ff8d17cfb509938a0419ccb2635f0bf7b5ab80d', // Replace with your image URL
+                                    borderColor: Color(
+                                        0xFF8DC73F), // Set your desired border color
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 28.0),
+                                  child: CircleImage(
+                                    imageUrl:
+                                        'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=996&t=st=1703762123~exp=1703762723~hmac=c5a651a814dd536844db268fc82cd42de51b590cb65f9ec48f4cb1262a4bc0eb',
+                                    borderColor: Color(
+                                        0xFF8DC73F), // Set your desired border color
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 56.0),
+                                  child: CircleImage(
+                                    imageUrl:
+                                        'https://img.freepik.com/free-photo/portrait-young-man-with-dark-curly-hair_176532-8137.jpg?w=996&t=st=1703762170~exp=1703762770~hmac=800d922c050eae1c18b44afea15b941f688501f8de8392812229036fbd94accf',
+                                    borderColor: Color(
+                                        0xFF8DC73F), // Set your desired border color
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 84.0),
+                                  child: CircleImage(
+                                    imageUrl:
+                                        'https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=996&t=st=1703762180~exp=1703762780~hmac=e860193a6a3db29abe03ab50040bd3f8a6348253cac29b184a660b02e96d051e',
+                                    borderColor: Color(
+                                        0xFF8DC73F), // Set your desired border color
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 112.0),
+                                  child: Container(
+                                    width: 45,
+                                    height: 45,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xFF8DC73F),
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        "2.5K+",
+                                        style: TextStyle(
+                                          height: 1.2,
+                                          fontSize: 10,
+                                          color: Colors.white,
+                                          fontFamily: 'SatoshiRegular',
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.02,
+                            ),
+                            const Text(
+                              "Going",
+                              style: TextStyle(
+                                height: 1.2,
+                                fontSize: 12,
+                                color: Color(0xFF8DC73F),
+                                fontFamily: 'SatoshiMedium',
+                              ),
+                            ),
+                            Expanded(child: Container()),
+                            const Text(
+                              "\$25.00",
+                              style: TextStyle(
+                                height: 1.2,
+                                fontSize: 18,
+                                color: Colors.black,
+                                fontFamily: 'SatoshiMedium',
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -458,26 +528,65 @@ class _EventDetailsState extends State<EventDetails> {
                       ],
                     ),
                   ),
+
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: Divider(
-                      height: 20, // Adjust the height of the line
-                      thickness: 0.4, // Adjust the thickness of the line
-                      color: Colors.grey, // Adjust the color of the line
-                    ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
+                    height: MediaQuery.of(context).size.height * 0.04,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 15.0),
                     child: Text(
-                      "Refund Policy",
+                      "Location Features",
                       style: TextStyle(
                         fontSize: 20,
+                        fontFamily: 'SatoshiBold',
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        LocationSubRow(
+                            'Assets/Images/Components/location01.svg',
+                            'Restroom'),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.04,
+                        ),
+                        LocationSubRow(
+                            'Assets/Images/Components/location02.svg',
+                            'Air Conditioner'),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.04,
+                        ),
+                        LocationSubRow(
+                            'Assets/Images/Components/location03.svg', 'Lunch'),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15.0, right: 15),
+                    child: Divider(
+                      thickness: 0.17,
+
+                      color: Colors.grey, // Set your desired thickness
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      "Refund Policy:",
+                      style: TextStyle(
+                        fontSize: 14,
                         fontFamily: 'SatoshiBold',
                       ),
                     ),
@@ -487,6 +596,7 @@ class _EventDetailsState extends State<EventDetails> {
                     child: Text(
                       "Refunds up to 7 days before event. Stubguys fees are non-refundable.",
                       style: TextStyle(
+                        color: Color(0xFF696D61),
                         fontSize: 14,
                         fontFamily: 'SatoshiRegular',
                       ),
@@ -499,36 +609,53 @@ class _EventDetailsState extends State<EventDetails> {
               ),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFF8DC73F),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.0), // Adjust the radius as needed
-                topRight: Radius.circular(20.0), // Adjust the radius as needed
+          GestureDetector(
+            onTap: () {
+              // Navigate to the Checkout page
+              showModalBottomSheet(
+                isScrollControlled: true,
+                context: context,
+                builder: (context) {
+                  return Container(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom,
+                    ),
+                    child: const Step1(),
+                  );
+                },
+              );
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Color(0xFF8DC73F),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.0), // Adjust the radius as needed
+                  topRight:
+                      Radius.circular(20.0), // Adjust the radius as needed
+                ),
               ),
-            ),
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.09,
-            padding: const EdgeInsets.all(16.0),
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.09,
+              padding: const EdgeInsets.all(16.0),
 
-            // Customize the color of the button container
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Get Tickets",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'SatoshiBold',
-                    color: Colors.white,
+              // Customize the color of the button container
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Get Tickets",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'SatoshiBold',
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.03,
-                ),
-                SvgPicture.asset(
-                    'Assets/Images/Components/getticket.svg')
-              ],
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.03,
+                  ),
+                  SvgPicture.asset('Assets/Images/Components/getticket.svg')
+                ],
+              ),
             ),
           ),
         ],

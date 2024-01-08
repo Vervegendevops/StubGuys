@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:stub_guys/Screens/Authentication/OTP.dart';
 import 'package:stub_guys/Screens/Authentication/SignUp.dart';
 
 class Login extends StatefulWidget {
@@ -29,7 +31,7 @@ class _LoginState extends State<Login> {
           // White Container with Login and Password
           // Positioned with top left and top right border radius
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.328,
+            top: MediaQuery.of(context).size.height * 0.35,
             left: 0,
             right: 0,
             bottom: 0,
@@ -138,7 +140,13 @@ class _LoginState extends State<Login> {
                           height: MediaQuery.of(context).size.height * 0.04,
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const otp()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.zero,
                             shape: RoundedRectangleBorder(
@@ -178,49 +186,48 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.035,
                   ),
-                  Positioned(
-                    bottom: 0,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFDEFBB8),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.075,
+              decoration: const BoxDecoration(
+                color: Color(0xFFDEFBB8),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account? ",
+                    style: TextStyle(
+                      // fontFamily: "Satoshi",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      height: 22 / 16,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignUp()),
+                      );
+                    },
+                    child: const Text(
+                      "Sign up",
+                      style: TextStyle(
+                        // fontFamily: "Satoshi",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 22 / 16,
+                        color: Color(0xff8dc73f),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Don't have an account? ",
-                            style: TextStyle(
-                              // fontFamily: "Satoshi",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              height: 22 / 16,
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignUp()),
-                              );
-                            },
-                            child: const Text(
-                              "Sign up",
-                              style: TextStyle(
-                                // fontFamily: "Satoshi",
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 22 / 16,
-                                color: Color(0xff8dc73f),
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                        ],
-                      ),
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ],

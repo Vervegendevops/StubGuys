@@ -1,3 +1,4 @@
+import 'package:stub_guys/Screens/PickInterest/picInterest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
@@ -73,7 +74,7 @@ class _otpState extends State<otp> {
               OtpTextField(
                 numberOfFields: 4,
                 showFieldAsBox: true,
-                fieldWidth: 80,
+                fieldWidth: 70,
                 focusedBorderColor: Color.fromARGB(255, 0, 128, 0),
                 enabledBorderColor: const Color.fromARGB(255, 224, 224, 224),
                 onCodeChanged: (String code) {
@@ -87,7 +88,13 @@ class _otpState extends State<otp> {
                 height: 80,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const picInterest()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.zero,
                   shape: RoundedRectangleBorder(
@@ -115,7 +122,7 @@ class _otpState extends State<otp> {
               ),
               Center(
                 child: Text(
-                  "Didn’t receive the OTP? Resend",
+                  "Didn't receive the OTP? Resend",
                   style: const TextStyle(
                     fontFamily: "Satoshi",
                     fontSize: 16,

@@ -1,3 +1,5 @@
+import 'package:stub_guys/Screens/Authentication/Login.dart';
+import 'package:stub_guys/Screens/Authentication/SignUp.dart';
 import 'package:flutter/material.dart';
 import 'onboarding_page_1.dart';
 import 'onboarding_page_2.dart';
@@ -58,6 +60,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignUp()),
+                        );
                         // TODO: Add logic for Skip button if needed
                       },
                       style: TextButton.styleFrom(
@@ -78,6 +85,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           _pageController.nextPage(
                             duration: Duration(milliseconds: 500),
                             curve: Curves.easeInOut,
+                          );
+                        } else if (_currentPage == 2) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUp()),
                           );
                         } else {
                           // TODO: Handle what happens when you're on the last page

@@ -38,6 +38,12 @@ dependencies:
   dots_indicator: ^3.0.0
   flutter_svg: ^2.0.9
   flutter_otp_text_field: ^1.1.1
+  outline_material_icons: ^1.0.0
+  cached_network_image: ^3.3.0
+  carousel_slider: ^4.2.1
+  chewie: ^1.7.4
+  video_player: ^2.8.2
+
 
 dev_dependencies:
   flutter_test:
@@ -63,12 +69,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - Assets/Videos/
     - Assets/Images/OnBoarding/
     - Assets/Images/Components/
+    - Assets/Images/Components/Payment/
+    - Assets/Images/Components/Flags/
+    - Assets/Images/Components/Profile/
     - Assets/Images/Components/TemoraryComponents/
     - Assets/Images/
     - Assets/epic/
     - Assets/Images/Icon/
+    - Assets/Images/Components/BottomNavigationBar/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

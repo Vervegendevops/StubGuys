@@ -53,7 +53,7 @@ class TextListViewBuilder extends StatelessWidget {
                     child: Text(
                       agendaList[index],
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Color(0xFF696D61),
                         fontSize: 14.0,
                         fontFamily: 'SatoshiMedium',
                       ),

@@ -1,3 +1,5 @@
+import 'package:stub_guys/Screens/Authentication/Login.dart';
+import 'package:stub_guys/Screens/OnBoardings/OnboardingScreen.dart';
 import 'package:flutter/material.dart';
 
 class SplashWelcome extends StatefulWidget {
@@ -60,7 +62,10 @@ class _SplashWelcomeState extends State<SplashWelcome> {
                 height: 100,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => OnboardingScreen()));
+                },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.zero,
                   shape: RoundedRectangleBorder(
@@ -89,6 +94,9 @@ class _SplashWelcomeState extends State<SplashWelcome> {
               ElevatedButton(
                 onPressed: () {
                   // Add your button press logic here
+
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => Login()));
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.zero,
@@ -103,7 +111,6 @@ class _SplashWelcomeState extends State<SplashWelcome> {
                   height: 55.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
-
                   ),
                   child: const Center(
                     child: Text(
