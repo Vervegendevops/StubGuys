@@ -7,7 +7,7 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Mainprofile.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/O_DashboardHome.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/ManageOrders/O_ManageOrders.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/O_MainProfile.dart';
-
+//hello
 class O_HomeFeed extends StatefulWidget {
   const O_HomeFeed({Key? key}) : super(key: key);
 
@@ -17,6 +17,7 @@ class O_HomeFeed extends StatefulWidget {
 
 class _O_HomeFeedState extends State<O_HomeFeed> {
   int _currentIndex = 4;
+  
 
   final List<Widget> _pages = [
     O_Dashboard(),
@@ -29,6 +30,7 @@ class _O_HomeFeedState extends State<O_HomeFeed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: _pages[_currentIndex],
       bottomNavigationBar: SizedBox(
         height: 80.0,
