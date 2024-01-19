@@ -43,6 +43,7 @@ dependencies:
   carousel_slider: ^4.2.1
   chewie: ^1.7.4
   video_player: ^2.8.2
+  country_code_picker: ^3.0.0
 
 
 dev_dependencies:
@@ -69,6 +70,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - Assets/ORGANISER_APP/Icons/Orders/
+    - Assets/ORGANISER_APP/Images/HomeFeed/
+    - Assets/ORGANISER_APP/Icons/Dashboard/
+    - Assets/ORGANISER_APP/Images/O_Profile/
     - Assets/Videos/
     - Assets/Images/OnBoarding/
     - Assets/Images/Components/
@@ -79,6 +84,7 @@ flutter:
     - Assets/Images/
     - Assets/epic/
     - Assets/Images/Icon/
+    - Assets/Images/Icon/HelpSupport/
     - Assets/Images/Components/BottomNavigationBar/
   #   - images/a_dot_ham.jpeg
 

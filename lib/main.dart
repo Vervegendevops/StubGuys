@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stub_guys/Screens/HomeFeeds/HomeFeed.dart';
+import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/HomeFeed.dart';
+
 
 
 void main() {
@@ -9,15 +10,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       title: 'Stub Guys',
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const HomeFeed(),
+      home: HomeFeed(),
+      // home: ChatPage(),
     );
   }
 }
