@@ -135,7 +135,7 @@ class _ChangePinState extends State<ChangePin> {
                         borderRadius: BorderRadius.circular(15)),
                     child: const Center(
                       child: Text(
-                        "Continue",
+                        "Continue yash",
                         style: TextStyle(
                             color: Color(0xffF1F1F2),
                                 fontFamily: 'SatoshiBold',
