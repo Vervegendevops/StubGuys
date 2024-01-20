@@ -56,13 +56,15 @@ class _ContentScreenState extends State<ContentScreen> {
                   controller: _chewieController!,
                 ),
               )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 10),
-                  Text('Loading...')
-                ],
+            : Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(),
+                    SizedBox(height: 10),
+                    Text('Loading...')
+                  ],
+                ),
               ),
       ],
     );
