@@ -95,33 +95,12 @@ class _ChangePinState extends State<ChangePin> {
               child: Column(
                 children: [
                   // Your existing content here
-                  SizedBox(
-                    height: mQuery.size.height * 0.02,
-                  ),
 
-                  // New OTP Boxes
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: List.generate(4, (index) {
-                          return GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                focusedIndex = index;
-                              });
-                              focusNodes[index].requestFocus();
-                            },
-                            child: OTPBox(
-                              controller: controllers[index],
-                              focusNode: focusNodes[index],
-                              isFocused: focusedIndex == index,
-                            ),
-                          );
-                        }),
-                      ),
-                    ],
+
+                  Container(
+                    height: 300,
+                    width: 300,
+                    color: Colors.yellow,
                   ),
 
                   SizedBox(
