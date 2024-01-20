@@ -117,7 +117,7 @@ class _ChangePinState extends State<ChangePin> {
                         "Continue",
                         style: TextStyle(
                             color: Color(0xffF1F1F2),
-                            fontWeight: FontWeight.w700,
+                                fontFamily: 'SatoshiBold',
                             fontSize: 16),
                       ),
                     ),
