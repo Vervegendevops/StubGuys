@@ -39,36 +39,54 @@ class _ChangePinState extends State<ChangePin> {
             Container(
               width: double.infinity,
               height: mQuery.size.height * 0.17,
-              color: Color(0xffDEFBB8),
+              color: const Color(0xffDEFBB8),
               child: Column(
                 children: [
-                  SizedBox(height: mQuery.size.height * 0.1,),
+                  SizedBox(
+                    height: mQuery.size.height * 0.1,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       children: [
-                        SvgPicture.asset("Assets/ORGANISER_APP/Icons/Orders/formkit_arrowleft.svg"),
-                        SizedBox(width: mQuery.size.width * 0.04,),
-                        Text("Input your StubGuys PIN", style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xff201335),
-                        ),)
+                        SvgPicture.asset(
+                            "Assets/ORGANISER_APP/Icons/Orders/formkit_arrowleft.svg"),
+                        SizedBox(
+                          width: mQuery.size.width * 0.04,
+                        ),
+                        const Text(
+                          "Input your StubGuys PIN",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xff201335),
+                            fontFamily: 'SatoshiBold',
+                            height: 1.1,
+                          ),
+                        )
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: mQuery.size.height * 0.02,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+            SizedBox(
+              height: mQuery.size.height * 0.02,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  Text("Enter your pin", style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xff5E6366),
-                  ),),
+                  Text(
+                    "Enter your pin",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF5E6366),
+                      fontFamily: 'SatoshiRegular',
+                      height: 1.1,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -77,8 +95,10 @@ class _ChangePinState extends State<ChangePin> {
               child: Column(
                 children: [
                   // Your existing content here
-                  SizedBox(height: mQuery.size.height * 0.02,),
-        
+                  SizedBox(
+                    height: mQuery.size.height * 0.02,
+                  ),
+
                   // New OTP Boxes
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,20 +124,23 @@ class _ChangePinState extends State<ChangePin> {
                     ],
                   ),
 
-                  SizedBox(height: mQuery.size.height*0.347,),
+                  SizedBox(
+                    height: mQuery.size.height * 0.347,
+                  ),
                   Container(
                     width: double.infinity,
-                    height: mQuery.size.height*0.055,
+                    height: mQuery.size.height * 0.055,
                     decoration: BoxDecoration(
-                        color: Color(0xff201335),
-                        borderRadius: BorderRadius.circular(15)
-                    ),
-                    child: Center(
-                      child: Text("Continue",style: TextStyle(
-                          color: Color(0xffF1F1F2),
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16
-                      ),),
+                        color: const Color(0xff201335),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Center(
+                      child: Text(
+                        "Continue",
+                        style: TextStyle(
+                            color: Color(0xffF1F1F2),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16),
+                      ),
                     ),
                   )
                 ],
@@ -135,14 +158,17 @@ class OTPBox extends StatelessWidget {
   final FocusNode focusNode;
   final bool isFocused;
 
-  OTPBox({required this.controller, required this.focusNode, required this.isFocused});
+  OTPBox(
+      {required this.controller,
+      required this.focusNode,
+      required this.isFocused});
 
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Container(
-      width: mQuery.size.width*0.18, // Adjust the width as needed
-      height: mQuery.size.width*0.63, // Adjust the height as needed
+      width: mQuery.size.width * 0.18, // Adjust the width as needed
+      height: mQuery.size.width * 0.63, // Adjust the height as needed
       child: TextField(
         controller: controller,
         focusNode: focusNode,
@@ -154,7 +180,8 @@ class OTPBox extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: BorderSide(
-              color: isFocused ? Color(0xff8DC73F) : Color(0xffF1F1F2),
+              color:
+                  isFocused ? const Color(0xff8DC73F) : const Color(0xffF1F1F2),
               width: 1,
             ),
           ),
