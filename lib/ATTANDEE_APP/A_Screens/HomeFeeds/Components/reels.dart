@@ -1,7 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/content_screen.dart';
-
+import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/Components/content_screen.dart';
 class reels extends StatelessWidget {
   final List<String> videos = [
     'https://assets.mixkit.co/videos/preview/mixkit-taking-photos-from-different-angles-of-a-model-34421-large.mp4',
