@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pinput/pinput.dart';
 
 class ChangePin extends StatefulWidget {
   const ChangePin({Key? key}) : super(key: key);
@@ -31,6 +32,17 @@ class _ChangePinState extends State<ChangePin> {
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
+
+    final defaultPinTheme = PinTheme(
+      width: mQuery.size.width*0.23,
+      height: mQuery.size.height*0.1,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: Color(0xff8DC73F)
+        )
+      )
+    );
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -84,45 +96,45 @@ class _ChangePinState extends State<ChangePin> {
                       fontWeight: FontWeight.w700,
                       color: Color(0xFF5E6366),
                       fontFamily: 'SatoshiRegular',
-                      height: 1.1,
+                      height: 2.1,
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(height: mQuery.size.height*0.02,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  // Your existing content here
-
-
-                  Container(
-                    height: 300,
-                    width: 300,
-                    color: Colors.yellow,
-                  ),
-
-                  SizedBox(
-                    height: mQuery.size.height * 0.347,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: mQuery.size.height * 0.055,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff201335),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                            color: Color(0xffF1F1F2),
-                                fontFamily: 'SatoshiBold',
-                            fontSize: 16),
+              child: Container(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      child: Pinput(
+                        length: 4,
+                        defaultPinTheme: defaultPinTheme,
                       ),
                     ),
-                  )
-                ],
+
+                    SizedBox(height: mQuery.size.height*0.54,),
+                    Container(
+                      width: double.infinity,
+                      height: mQuery.size.height * 0.055,
+                      decoration: BoxDecoration(
+                          color: const Color(0xff201335),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Center(
+                        child: Text(
+                          "Continue",
+                          style: TextStyle(
+                              color: Color(0xffF1F1F2),
+                                  fontFamily: 'SatoshiBold',
+                              fontSize: 16),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
