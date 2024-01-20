@@ -107,13 +107,10 @@ class _ChangePinState extends State<ChangePin> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      child: Pinput(
-                        length: 4,
-                        defaultPinTheme: defaultPinTheme,
-                      ),
+                    Pinput(
+                      length: 4,
+                      defaultPinTheme: defaultPinTheme,
                     ),
 
                     SizedBox(height: mQuery.size.height*0.54,),
