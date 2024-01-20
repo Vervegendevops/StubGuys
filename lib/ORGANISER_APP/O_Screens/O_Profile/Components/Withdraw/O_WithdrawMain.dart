@@ -63,6 +63,143 @@ class _WithdrawMainState extends State<WithdrawMain> {
                     ],
                   ),
                 ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              const Text(
+                "Available Balance",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xff696D61),
+                  fontFamily: 'SatoshiMedium',
+                  height: 1.1,
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.005,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "1750.00",
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Color(0xff201335),
+                      fontFamily: 'SatoshiBold',
+                      height: 1.1,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.transparent, // Set your desired color
+                    ),
+                    child: Container(
+                      width: 110.0,
+                      height: 47.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                            16.0), // Set your desired border radius
+                        color: Colors
+                            .transparent, // Set your desired background color
+                        border: Border.all(
+                          color: const Color(
+                              0xFFF1F1F2), // Set your desired border color
+                          width: 1.0, // Set your desired border width
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0),
+                            child: Container(
+                              width: 30.0,
+                              height: 40.0,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: const Color(
+                                      0xFFF1F1F2), // Set your desired border color
+                                  width: 1.0, // Set your desired border width
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                              width:
+                                  8.0), // Adjust the spacing between elements
+                          const Text(
+                            "USD",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Color(0xff201335),
+                              fontFamily: 'SatoshiMedium',
+                              height: 1.1,
+                            ),
+                          ),
+                          const Icon(
+                            Icons.keyboard_arrow_down,
+                            color: Colors.black, // Set your desired icon color
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.005,
+              ),
+              const Text(
+                "Update Payout details",
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff8DC73F),
+                  fontFamily: 'SatoshiMedium',
+                  height: 1.1,
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+              //Withdraw Button
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.055,
+                decoration: BoxDecoration(
+                    color: const Color(0xff201335),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Center(
+                  child: Text(
+                    "Withdraw",
+                    style: TextStyle(
+                        color: Color(0xffF1F1F2),
+                        fontFamily: 'SatoshiBold',
+                        fontSize: 16),
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "RECENT WITHDRAWALS",
+                    style: TextStyle(
+                      color: Color(0xff696D61),
+                      fontFamily: 'SatoshiRegular',
+                      fontSize: 12,
+                    ),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(
+                        color: Color(0xff8DC73F),
+                        fontFamily: 'SatoshiBold',
+                        fontSize: 16),
+                  ),
+                ],
               )
             ],
           ),
