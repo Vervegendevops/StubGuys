@@ -8,6 +8,8 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/Editpro
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/Favourites.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/L&C/Language.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Support/SupportMain.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChangePin.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChnagePassword.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_OM_Button.dart';
 
 class O_Profile extends StatefulWidget {
@@ -230,12 +232,21 @@ class _O_ProfileState extends State<O_Profile> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: IconTextRow(
-                      iconData:
-                          "Assets/Images/Components/Profile/p_Notifications.svg",
-                      text: "Change Password",
+                  GestureDetector(
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PasswordPage()),
+                      )
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: IconTextRow(
+                        iconData:
+                            "Assets/Images/Components/Profile/p_Notifications.svg",
+                        text: "Change Password",
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -246,7 +257,7 @@ class _O_ProfileState extends State<O_Profile> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const Language()),
+                            builder: (context) => const ChangePin()),
                       )
                     },
                     child: Padding(
@@ -312,7 +323,7 @@ class _O_ProfileState extends State<O_Profile> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  
+
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconTextRowSwitch(
