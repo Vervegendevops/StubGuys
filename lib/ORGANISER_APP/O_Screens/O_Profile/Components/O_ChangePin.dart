@@ -55,7 +55,7 @@ class _ChangePinState extends State<ChangePin> {
                           width: mQuery.size.width * 0.04,
                         ),
                         const Text(
-                          "Input your StubGuys PIN",
+                          "Input your StubGuys PIN hello",
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
