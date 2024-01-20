@@ -31,7 +31,7 @@ class _PasswordPageState extends State<PasswordPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       children: [
-                        SvgPicture.asset("assets/images/arrowleft.svg"),
+                        SvgPicture.asset("Assets/ORGANISER_APP/Icons/Orders/formkit_arrowleft.svg"),
                         SizedBox(width: mQuery.size.width*0.1,),
                         Text("Change Password",style: TextStyle(
                             fontSize: 24,
