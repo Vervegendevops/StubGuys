@@ -19,13 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: HomeFeed(),
+      home: const HomeFeed(),
       // home: ChatPage(),
-<<<<<<< HEAD
+
       // home: ChangePin(),
-=======
-      home: WithdrawAmount(),
->>>>>>> 05606acbe13fdaf807b18db338be068b8d4521b0
     );
   }
 }
