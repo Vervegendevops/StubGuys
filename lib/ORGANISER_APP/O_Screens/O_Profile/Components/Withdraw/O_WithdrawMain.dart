@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/Components/Withdrawalsdata.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_withdrawlAmount.dart';
 
 class WithdrawMain extends StatefulWidget {
-  const WithdrawMain({super.key});
+  const WithdrawMain({Key? key}) : super(key: key);
 
   @override
   State<WithdrawMain> createState() => _WithdrawMainState();
@@ -12,12 +14,13 @@ class _WithdrawMainState extends State<WithdrawMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-        ),
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -39,23 +42,19 @@ class _WithdrawMainState extends State<WithdrawMain> {
                         'Assets/Images/Icon/bell.svg',
                       ),
                       Positioned(
-                        top:
-                            -4.0, // Adjust the top value to position the container
-                        right:
-                            5.0, // Adjust the right value to position the container
+                        top: -4.0,
+                        right: 5.0,
                         child: Container(
                           padding: const EdgeInsets.all(5.0),
                           decoration: const BoxDecoration(
-                            color: Color(
-                                0xFF8DC73F), // Adjust the background color as needed
+                            color: Color(0xFF8DC73F),
                             shape: BoxShape.circle,
                           ),
                           child: const Text(
-                            '5', // Replace with the actual number of notifications
+                            '5',
                             style: TextStyle(
-                              color: Colors
-                                  .white, // Adjust the text color as needed
-                              fontSize: 10.0, // Adjust the font size as needed
+                              color: Colors.white,
+                              fontSize: 10.0,
                             ),
                           ),
                         ),
@@ -64,9 +63,7 @@ class _WithdrawMainState extends State<WithdrawMain> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.05,
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
               const Text(
                 "Available Balance",
                 style: TextStyle(
@@ -76,9 +73,7 @@ class _WithdrawMainState extends State<WithdrawMain> {
                   height: 1.1,
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.005),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -94,20 +89,17 @@ class _WithdrawMainState extends State<WithdrawMain> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.transparent, // Set your desired color
+                      color: Colors.transparent,
                     ),
                     child: Container(
                       width: 110.0,
                       height: 47.0,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                            16.0), // Set your desired border radius
-                        color: Colors
-                            .transparent, // Set your desired background color
+                        borderRadius: BorderRadius.circular(16.0),
+                        color: Colors.transparent,
                         border: Border.all(
-                          color: const Color(
-                              0xFFF1F1F2), // Set your desired border color
-                          width: 1.0, // Set your desired border width
+                          color: const Color(0xFFF1F1F2),
+                          width: 1.0,
                         ),
                       ),
                       child: Row(
@@ -121,16 +113,13 @@ class _WithdrawMainState extends State<WithdrawMain> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 border: Border.all(
-                                  color: const Color(
-                                      0xFFF1F1F2), // Set your desired border color
-                                  width: 1.0, // Set your desired border width
+                                  color: const Color(0xFFF1F1F2),
+                                  width: 1.0,
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                              width:
-                                  8.0), // Adjust the spacing between elements
+                          const SizedBox(width: 8.0),
                           const Text(
                             "USD",
                             style: TextStyle(
@@ -142,17 +131,15 @@ class _WithdrawMainState extends State<WithdrawMain> {
                           ),
                           const Icon(
                             Icons.keyboard_arrow_down,
-                            color: Colors.black, // Set your desired icon color
+                            color: Colors.black,
                           ),
                         ],
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.005),
               const Text(
                 "Update Payout details",
                 style: TextStyle(
@@ -163,20 +150,31 @@ class _WithdrawMainState extends State<WithdrawMain> {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-              //Withdraw Button
-              Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.055,
-                decoration: BoxDecoration(
+              // Withdraw Button
+              GestureDetector(
+                onTap: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WithdrawAmount()),
+                  )
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 0.055,
+                  decoration: BoxDecoration(
                     color: const Color(0xff201335),
-                    borderRadius: BorderRadius.circular(15)),
-                child: const Center(
-                  child: Text(
-                    "Withdraw",
-                    style: TextStyle(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Withdraw",
+                      style: TextStyle(
                         color: Color(0xffF1F1F2),
                         fontFamily: 'SatoshiBold',
-                        fontSize: 16),
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -195,14 +193,60 @@ class _WithdrawMainState extends State<WithdrawMain> {
                   Text(
                     "See all",
                     style: TextStyle(
-                        color: Color(0xff8DC73F),
-                        fontFamily: 'SatoshiBold',
-                        fontSize: 16),
+                      color: Color(0xff8DC73F),
+                      fontFamily: 'SatoshiBold',
+                      fontSize: 16,
+                    ),
                   ),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  itemCount: dataList.length,
+                  itemBuilder: (context, index) {
+                    // Extracting data for the current row
+                    String text1 = dataList[index]['ID'] ?? '';
+                    String text2 = dataList[index]['TransID'] ?? '';
+                    String text3 = dataList[index]['Date'] ?? '';
+
+                    // Creating a row with three Text widgets
+                    return ListTile(
+                      title: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            text1,
+                            style: const TextStyle(
+                              color: Color(0xFF8DC73F),
+                              fontSize: 16,
+                              fontFamily: 'SatoshiBold',
+                            ),
+                          ),
+                          Text(
+                            text2,
+                            style: const TextStyle(
+                                color: Color(0xFF696D61),
+                                fontSize: 16,
+                                fontFamily: 'SatoshiBold'),
+                          ),
+                          Text(
+                            text3,
+                            style: const TextStyle(
+                                color: Color(0xFF696D61),
+                                fontSize: 16,
+                                fontFamily: 'SatoshiMedium'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -8,7 +8,7 @@ class WithdrawSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
-       backgroundColor: Color(0xffdefbb8),
+       backgroundColor: const Color(0xffdefbb8),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -16,13 +16,13 @@ class WithdrawSuccess extends StatelessWidget {
             Center(child: SvgPicture.asset("Assets/Images/Components/Flags/tick.svg",
             height: 182,width: 182,)),
             SizedBox(height: mQuery.size.height*0.007,),
-            Text("Withdraw Successful",style: TextStyle(
+            const Text("Withdraw Successful",style: TextStyle(
               fontSize: 36,
               fontFamily: 'SatoshiBold',
               color: Color(0xff201335)
             ),),
             SizedBox(height: mQuery.size.height*0.007,),
-            Text("Transfer was completed.",style: TextStyle(
+            const Text("Transfer was completed.",style: TextStyle(
               fontSize: 16
             ),),
             SizedBox(height: mQuery.size.height*0.21,),
@@ -33,9 +33,9 @@ class WithdrawSuccess extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0xff201335)
+                  color: const Color(0xff201335)
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Okay, got it",style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -45,7 +45,7 @@ class WithdrawSuccess extends StatelessWidget {
               ),
             ),
             SizedBox(height: mQuery.size.height*0.015,),
-            Text("Download receipt",style: TextStyle(
+            const Text("Download receipt",style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
               fontFamily: 'SatoshiMedium'

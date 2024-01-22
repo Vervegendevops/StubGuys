@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_ConfirmOTP.dart';
 
 class WithdrawAmount extends StatefulWidget {
   const WithdrawAmount({Key? key});
@@ -37,9 +38,8 @@ class _WithdrawAmountState extends State<WithdrawAmount> {
                           "Withdraw",
                           style: TextStyle(
                             fontSize: 24,
-                            fontWeight: FontWeight.w700,
                             color: Color(0xff201335),
-                            fontFamily: 'SatoshiRegular',
+                            fontFamily: 'SatoshiMedium',
                             height: 1.1,
                           ),
                         ),
@@ -56,32 +56,36 @@ class _WithdrawAmountState extends State<WithdrawAmount> {
               child: Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: Text("Bank Name", style: TextStyle(
-                      fontSize: 12
-                    ),),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: const Text(
+                      "Bank Name",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xff5E6366),
+                        fontFamily: 'SatoshiMedium',
+                        height: 1.1,
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: mQuery.size.height*0.016,),
+            SizedBox(
+              height: mQuery.size.height * 0.016,
+            ),
             // Add some spacing
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               width: double.infinity,
               height: 50,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: Color(0xffF1F1F2),
-                  width: 1
-                )
-              ),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: const Color(0xffF1F1F2), width: 1)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Capital One",
                     style: TextStyle(
                       fontSize: 13,
@@ -90,145 +94,176 @@ class _WithdrawAmountState extends State<WithdrawAmount> {
                       fontFamily: 'SatoshiRegular',
                     ),
                   ),
-                  SvgPicture.asset("Assets/ORGANISER_APP/Icons/Orders/dropdown.svg"),
+                  SvgPicture.asset(
+                      "Assets/ORGANISER_APP/Icons/Orders/dropdown.svg"),
                 ],
               ),
             ),
-        
+
             SizedBox(height: mQuery.size.height * 0.02),
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Text("Account number", style: TextStyle(
-                      fontSize: 12
-                  ),),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: const Text(
+                    "Account number",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xff5E6366),
+                      fontFamily: 'SatoshiMedium',
+                      height: 1.1,
+                    ),
+                  ),
                 ),
               ],
             ),
-        
-            SizedBox(height: mQuery.size.height*0.016,),
-        
+
+            SizedBox(
+              height: mQuery.size.height * 0.016,
+            ),
+
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              width: double.infinity,
-              height: 50,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color(0xffF1F1F2),
-                )
-              ),
-              child: TextField(
-                controller: accountnumberController,
-                decoration: InputDecoration(
-                  hintText: "******20203",
-                  hintStyle: TextStyle(
-                    fontSize: 13,
-                    color: Color(0xffABAFB1)
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(
-                          color: Color(0xffF1F1F2),
-                          width: 1
-                      )
-                  ),
-                )
-              )
-            ),
-        
-            SizedBox(height: mQuery.size.height*0.012,),
-            Text("Switch Bank Account", style: TextStyle(
-              color: Color(0xff8DC73F),
-              fontSize: 13,
-              fontFamily: 'SatoshiMedium',
-            ),),
-        
-            SizedBox(height: mQuery.size.height*0.03,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text("Balance (\$)    1,750.00",style: TextStyle(
-                    fontSize: 13,
-                      color: Color(0xff696D61)
-                  ),)
-                ],
-              ),
-            ),
-        
-            SizedBox(height: mQuery.size.height*0.015,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text("Withdrawable Balance (\$)    1,750.00",
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Color(0xff696D61)
-                  ),)
-                ],
-              ),
-            ),
-            
-            SizedBox(height: mQuery.size.height*0.03,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Text("Withdrawal Amount", style: TextStyle(
-                    fontSize: 12,
-                    color: Color(0xff5E6366),
-                  ),),
-                ],
-              ),
-            ),
-        
-            SizedBox(height: mQuery.size.height*0.016,),
-            Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: Color(0xffF1F1F2),
-                    )
-                ),
+                  color: const Color(0xffF1F1F2),
+                )),
                 child: TextField(
+                    controller: accountnumberController,
                     decoration: InputDecoration(
-                      hintText: "Amount (\$)                                               min. 50.00",
-                      hintStyle: TextStyle(
-                        fontSize: 13,
-                        color: Color(0xffABAFB1)
-                      ),
+                      hintText: "******20203",
+                      hintStyle: const TextStyle(
+                          fontSize: 13, color: Color(0xffABAFB1)),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(
-                              color: Color(0xffF1F1F2),
-                              width: 1
-                          )
-                      ),
-                    ),
-                )
+                          borderSide: const BorderSide(
+                              color: Color(0xffF1F1F2), width: 1)),
+                    ))),
+
+            SizedBox(
+              height: mQuery.size.height * 0.012,
+            ),
+            const Text(
+              "Switch Bank Account",
+              style: TextStyle(
+                color: Color(0xff8DC73F),
+                fontSize: 13,
+                fontFamily: 'SatoshiMedium',
+              ),
             ),
 
-            SizedBox(height: mQuery.size.height*0.025,),
+            SizedBox(
+              height: mQuery.size.height * 0.03,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Balance (\$)    1,750.00",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Color(0xff5E6366),
+                      fontFamily: 'SatoshiMedium',
+                      height: 1.1,
+                    ),
+                  )
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: mQuery.size.height * 0.015,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Withdrawable Balance (\$)    1,750.00",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Color(0xff5E6366),
+                      fontFamily: 'SatoshiMedium',
+                      height: 1.1,
+                    ),
+                  )
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: mQuery.size.height * 0.03,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Text(
+                    "Withdrawal Amount",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xff5E6366),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: mQuery.size.height * 0.016,
+            ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
-              width: double.infinity,
-              height: mQuery.size.height * 0.06,
-              decoration: BoxDecoration(
-                  color: Color(0xff201335),
-                  borderRadius: BorderRadius.circular(15)),
-              child: const Center(
-                child: Text(
-                  "Withdraw",
-                  style: TextStyle(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                width: double.infinity,
+                height: 50,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                  color: const Color(0xffF1F1F2),
+                )),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText:
+                        "Amount (\$)                                                    min. 50.00",
+                    hintStyle:
+                        const TextStyle(fontSize: 13, color: Color(0xffABAFB1)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(
+                            color: Color(0xffF1F1F2), width: 1)),
+                  ),
+                )),
+
+            SizedBox(
+              height: mQuery.size.height * 0.03,
+            ),
+            GestureDetector(
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ConfirmOTP()),
+                )
+              },
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                width: double.infinity,
+                height: mQuery.size.height * 0.06,
+                decoration: BoxDecoration(
+                    color: const Color(0xff201335),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Center(
+                  child: Text(
+                    "Withdraw",
+                    style: TextStyle(
                       color: Color(0xffF1F1F2),
                       fontFamily: 'SatoshiBold',
-                      fontSize: 16
+                      fontSize: 16,
+                      height: 1.0,
+                    ),
                   ),
                 ),
               ),
