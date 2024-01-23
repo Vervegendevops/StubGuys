@@ -8,48 +8,77 @@ class WithdrawSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
     return Scaffold(
-       backgroundColor: const Color(0xffdefbb8),
+      backgroundColor: const Color(0xffdefbb8),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: mQuery.size.height*0.29,),
-            Center(child: SvgPicture.asset("Assets/Images/Components/Flags/tick.svg",
-            height: 182,width: 182,)),
-            SizedBox(height: mQuery.size.height*0.007,),
-            const Text("Withdraw Successful",style: TextStyle(
-              fontSize: 36,
-              fontFamily: 'SatoshiBold',
-              color: Color(0xff201335)
-            ),),
-            SizedBox(height: mQuery.size.height*0.007,),
-            const Text("Transfer was completed.",style: TextStyle(
-              fontSize: 16
-            ),),
-            SizedBox(height: mQuery.size.height*0.21,),
+            SizedBox(
+              height: mQuery.size.height * 0.29,
+            ),
+            Center(
+                child: SvgPicture.asset(
+              "Assets/Images/Components/Flags/tick.svg",
+              height: 182,
+              width: 182,
+            )),
+            SizedBox(
+              height: mQuery.size.height * 0.007,
+            ),
+            const Text(
+              "Withdraw Successful",
+              style: TextStyle(
+                  fontSize: 36,
+                  fontFamily: 'SatoshiBold',
+                  color: Color(0xff201335)),
+            ),
+            SizedBox(
+              height: mQuery.size.height * 0.007,
+            ),
+            const Text(
+              "Transfer was completed.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(
+              height: mQuery.size.height * 0.21,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
-                height: mQuery.size.height*0.055,
+                height: mQuery.size.height * 0.055,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color(0xff201335)
-                ),
+                    borderRadius: BorderRadius.circular(15),
+                    color: const Color(0xff201335)),
                 child: const Center(
-                  child: Text("Okay, got it",style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'SatoshiMedium'
-                  ),),
+                  child: Text(
+                    "Okay, got it",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'SatoshiMedium'),
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: mQuery.size.height*0.015,),
-            const Text("Download receipt",style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'SatoshiMedium'
-            ),)
+            SizedBox(
+              height: mQuery.size.height * 0.015,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WithdrawSuccess()),
+                );
+              },
+              child: const Text(
+                "Download receipt",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'SatoshiMedium'),
+              ),
+            )
           ],
         ),
       ),

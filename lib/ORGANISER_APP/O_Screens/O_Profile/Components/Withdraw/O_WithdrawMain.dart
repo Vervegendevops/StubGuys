@@ -5,7 +5,7 @@ import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/
 
 class WithdrawMain extends StatefulWidget {
   const WithdrawMain({Key? key}) : super(key: key);
-
+ 
   @override
   State<WithdrawMain> createState() => _WithdrawMainState();
 }
