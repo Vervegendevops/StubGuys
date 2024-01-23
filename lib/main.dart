@@ -14,7 +14,6 @@ import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home: const WithdrawMain(),
+      home: const HomeFeed(),
      // home: SwitchBankAccount(),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/BrowseEvents/BrowseEvents.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/MyTickets/Mytickets.dart';
@@ -28,12 +29,19 @@ class _O_HomeFeedState extends State<O_HomeFeed> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-      body: _pages[_currentIndex],
-      bottomNavigationBar: SizedBox(
-        height: 80.0,
-        child: buildBottomNavigationBar(),
+    return WillPopScope(
+      onWillPop: () async {
+        // Close the app when the back button is pressed
+        SystemNavigator.pop();
+        return true;
+      },
+      child: Scaffold(
+        
+        body: _pages[_currentIndex],
+        bottomNavigationBar: SizedBox(
+          height: 80.0,
+          child: buildBottomNavigationBar(),
+        ),
       ),
     );
   }

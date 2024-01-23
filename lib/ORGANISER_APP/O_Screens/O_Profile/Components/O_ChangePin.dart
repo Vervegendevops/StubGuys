@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pinput/pinput.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_HomeFeeds/O_HomeFeed.dart';
 
 class ChangePin extends StatefulWidget {
   const ChangePin({Key? key}) : super(key: key);
@@ -113,19 +114,28 @@ class _ChangePinState extends State<ChangePin> {
                     ),
 
                     SizedBox(height: mQuery.size.height*0.54,),
-                    Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.055,
-                      decoration: BoxDecoration(
-                          color: const Color(0xff201335),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: const Center(
-                        child: Text(
-                          "Continue",
-                          style: TextStyle(
-                              color: Color(0xffF1F1F2),
-                                  fontFamily: 'SatoshiBold',
-                              fontSize: 16),
+                    GestureDetector(
+                       onTap: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const O_HomeFeed()),
+                  )
+                },
+                      child: Container(
+                        width: double.infinity,
+                        height: mQuery.size.height * 0.055,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff201335),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Center(
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(
+                                color: Color(0xffF1F1F2),
+                                    fontFamily: 'SatoshiBold',
+                                fontSize: 16),
+                          ),
                         ),
                       ),
                     )
