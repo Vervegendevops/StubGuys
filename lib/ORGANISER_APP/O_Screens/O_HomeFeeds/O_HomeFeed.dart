@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/BrowseEvents/BrowseEvents.dart';
-import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/Short_videos.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/MyTickets/Mytickets.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Mainprofile.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/O_DashboardHome.dart';
