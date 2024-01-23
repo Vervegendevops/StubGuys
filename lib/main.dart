@@ -10,7 +10,6 @@ import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/
 
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_WithdrawSuccess.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_withdrawlAmount.dart';
-import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/SwitchBankAccount.dart';
 
 void main() {
   runApp(const MyApp());
