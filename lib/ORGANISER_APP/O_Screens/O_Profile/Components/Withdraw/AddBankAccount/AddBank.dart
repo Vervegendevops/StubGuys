@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/AddBankAccount/AddBank.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_ConfirmOTP.dart';
 
-class WithdrawAmount extends StatefulWidget {
-  const WithdrawAmount({Key? key});
+class AddBank extends StatefulWidget {
+  const AddBank({Key? key});
 
   @override
-  State<WithdrawAmount> createState() => _WithdrawAmountState();
+  State<AddBank> createState() => _AddBankState();
 }
 
-class _WithdrawAmountState extends State<WithdrawAmount> {
+class _AddBankState extends State<AddBank> {
   TextEditingController accountnumberController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class _WithdrawAmountState extends State<WithdrawAmount> {
                         SvgPicture.asset(
                             "Assets/ORGANISER_APP/Icons/Orders/formkit_arrowleft.svg"),
                         const Text(
-                          "Withdraw",
+                          "Add Bank Account",
                           style: TextStyle(
                             fontSize: 24,
                             color: Color(0xff201335),
@@ -150,7 +149,7 @@ class _WithdrawAmountState extends State<WithdrawAmount> {
               onTap: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const AddBank()),
+                  MaterialPageRoute(builder: (context) => const ConfirmOTP()),
                 )
               },
               child: const Text(
