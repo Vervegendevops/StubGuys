@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pinput/pinput.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_HomeFeeds/O_HomeFeed.dart';
 
 class ChangePin extends StatefulWidget {
   const ChangePin({Key? key}) : super(key: key);
@@ -31,6 +33,17 @@ class _ChangePinState extends State<ChangePin> {
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
+
+    final defaultPinTheme = PinTheme(
+      width: mQuery.size.width*0.23,
+      height: mQuery.size.height*0.1,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: Color(0xff8DC73F)
+        )
+      )
+    );
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -49,8 +62,7 @@ class _ChangePinState extends State<ChangePin> {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       children: [
-                        SvgPicture.asset(
-                            "Assets/ORGANISER_APP/Icons/Orders/formkit_arrowleft.svg"),
+                        SvgPicture.asset("Assets/ORGANISER_APP/Icons/Orders/formkit_arrowleft.svg"),
                         SizedBox(
                           width: mQuery.size.width * 0.04,
                         ),
@@ -84,66 +96,51 @@ class _ChangePinState extends State<ChangePin> {
                       fontWeight: FontWeight.w700,
                       color: Color(0xFF5E6366),
                       fontFamily: 'SatoshiRegular',
-                      height: 1.1,
+                      height: 2.1,
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(height: mQuery.size.height*0.02,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  // Your existing content here
-                  SizedBox(
-                    height: mQuery.size.height * 0.02,
-                  ),
-
-                  // New OTP Boxes
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: List.generate(4, (index) {
-                          return GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                focusedIndex = index;
-                              });
-                              focusNodes[index].requestFocus();
-                            },
-                            child: OTPBox(
-                              controller: controllers[index],
-                              focusNode: focusNodes[index],
-                              isFocused: focusedIndex == index,
-                            ),
-                          );
-                        }),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    height: mQuery.size.height * 0.347,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: mQuery.size.height * 0.055,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff201335),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                            color: Color(0xffF1F1F2),
-                                fontFamily: 'SatoshiBold',
-                            fontSize: 16),
-                      ),
+              child: Container(
+                child: Column(
+                  children: [
+                    Pinput(
+                      length: 4,
+                      defaultPinTheme: defaultPinTheme,
                     ),
+
+                    SizedBox(height: mQuery.size.height*0.54,),
+                    GestureDetector(
+                       onTap: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const O_HomeFeed()),
                   )
-                ],
+                },
+                      child: Container(
+                        width: double.infinity,
+                        height: mQuery.size.height * 0.055,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff201335),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Center(
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(
+                                color: Color(0xffF1F1F2),
+                                    fontFamily: 'SatoshiBold',
+                                fontSize: 16),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],

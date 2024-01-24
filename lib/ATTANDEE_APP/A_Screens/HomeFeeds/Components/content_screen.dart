@@ -56,7 +56,7 @@ class _ContentScreenState extends State<ContentScreen> {
                   controller: _chewieController!,
                 ),
               )
-            : Center(
+            : const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
