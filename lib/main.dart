@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/HomeFeed.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChangePin.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChnagePassword.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_Notification.dart';
+// import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_Notifications.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/AddBankAccount/AddBank.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_ConfirmOTP.dart';
+// import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_Notifications.dart';
 
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_WithdrawReceipt.dart';
 
@@ -28,9 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-
-      // home: const WithdrawMain(),
-     home: AddBank(),
+      home: HomeFeed(),
     );
   }
 }
