@@ -8,7 +8,7 @@ class PromptPay extends StatefulWidget {
   State<PromptPay> createState() => _PromptPayState();
 }
 
-class _PromptPayState extends State<PromptPay> {
+class _PromptPayState extends State<PromptPay> { 
   int selectedpaymentmethod = -1;
   // List of SVG file paths for each payment method
   List<String> svgPaths = [
@@ -121,6 +121,7 @@ class _PromptPayState extends State<PromptPay> {
                 ),
               ),
             ),
+            SizedBox(height: 30.0,)
           ]),
         ),
       ),

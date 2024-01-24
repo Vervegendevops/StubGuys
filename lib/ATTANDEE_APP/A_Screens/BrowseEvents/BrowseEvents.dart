@@ -151,7 +151,7 @@ class _BrowseEventsState extends State<BrowseEvents> {
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
               TimeSelector(),
-              SizedBox(
+              SizedBox( 
                 height: MediaQuery.of(context).size.height * 0.03,
               ), 
               ListView.builder(

@@ -61,7 +61,7 @@ class _MyTicketsState extends State<MyTickets> {
             ),
             Text(
               "${numberofevents} events",
-              style:  TextStyle(
+              style: TextStyle(
                 color: _selectedButton == 'Button 1'
                     ? Color(0xFF201335)
                     : Colors.transparent,
@@ -160,14 +160,14 @@ class ContainerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
+      padding: const EdgeInsets.only(left: 8.0,right: 8.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.green,
           borderRadius: BorderRadius.circular(30.0),
         ),
-        width: MediaQuery.of(context).size.width * 0.85,
-        height: MediaQuery.of(context).size.height * 0.58,
+        width: MediaQuery.of(context).size.width * 0.8,
+        height: MediaQuery.of(context).size.height * 0.55,
         margin: const EdgeInsets.all(8.0),
         child: Stack(
           children: [
@@ -175,7 +175,9 @@ class ContainerItem extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.asset(
-                      "Assets/Images/Components/browseeventsexample3.png"),
+                    "Assets/Images/Components/browseeventsexample3.png",
+                    fit: BoxFit.fill,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                       right: 15.0,
@@ -222,9 +224,9 @@ class ContainerItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.33,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 30.0),
+                    padding: const EdgeInsets.only(left: 20.0, top: 35.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
