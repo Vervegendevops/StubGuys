@@ -1,7 +1,7 @@
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/Login.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/OTP.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/BrowseEvents/BrowseEvents.dart';
@@ -53,6 +55,7 @@ class _HomeFeedState extends State<HomeFeed> {
             'Assets/Images/Components/BottomNavigationBar/home.svg',
             width: 26,
             height: 26,
+            // ignore: deprecated_member_use
             color: _currentIndex == 0 ? const Color(0xFF8DC73F) : Colors.white,
           ),
           label: 'Home',

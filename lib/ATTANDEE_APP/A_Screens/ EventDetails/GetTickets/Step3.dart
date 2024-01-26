@@ -13,11 +13,28 @@ class Step3 extends StatefulWidget {
 }
 
 class _Step3State extends State<Step3> {
+  int selectedPaymentMethod = 2;
+
+  List<String> svgPaths = [
+    'Assets/Images/Components/Payment/card.svg',
+    'Assets/Images/Components/Payment/paypal.svg',
+    'Assets/Images/Components/Payment/apple.svg',
+    'Assets/Images/Components/Payment/gpay.svg',
+  ];
+
   void _paymentprompt() {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return PromptPay(); // Replace with your filter widget
+        return PromptPay(
+          svgPaths: svgPaths,
+          selectedPaymentMethod: selectedPaymentMethod,
+          onSave: (int index) {
+            setState(() {
+              selectedPaymentMethod = index;
+            });
+          },
+        ); // Replace with your filter widget
       },
     );
   }
@@ -239,7 +256,7 @@ class _Step3State extends State<Step3> {
                                         ),
                                         child: Center(
                                           child: SvgPicture.asset(
-                                            'Assets/Images/Components/Payment/apple.svg', // Replace with your SVG file path
+                                              svgPaths[selectedPaymentMethod] // Replace with your SVG file path
                                           ),
                                         ),
                                       ),
@@ -430,3 +447,4 @@ class _Step3State extends State<Step3> {
     );
   }
 }
+

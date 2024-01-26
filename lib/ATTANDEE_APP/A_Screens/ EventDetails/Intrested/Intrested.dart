@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/EventDetailsV1.dart';
-import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/GetTickets/Step2.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/Intrested/Intrestedpeople.dart';
 
 class Intrested extends StatefulWidget {
@@ -13,7 +12,6 @@ class Intrested extends StatefulWidget {
 
 class _IntrestedState extends State<Intrested> {
   TextEditingController _selectedButtonController = TextEditingController();
-  String _selectedButton = 'Button 1';
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +124,6 @@ class _IntrestedState extends State<Intrested> {
 
   void _handleButtonSelection(String buttonValue) {
     setState(() {
-      _selectedButton = buttonValue;
       _selectedButtonController.text = buttonValue;
     });
   }

@@ -14,39 +14,39 @@ class _TimeSelectorState extends State<TimeSelector> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 0.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          buildElevatedButton('Button 1', 'Today', 50.0),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.04,
-          ),
-          buildElevatedButton('Button 2', 'This Week', 70.0),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.04,
-          ),
-          buildElevatedButton('Button 3', 'This Month', 80.0),
-        ],
-      ),
-    );
+        padding: const EdgeInsets.only(left: 0.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(child: buildElevatedButton('Button 1', 'Today',MediaQuery.of(context).size.width*0.22)),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.032,
+            ),
+            Expanded(child: buildElevatedButton('Button 2', 'This Week',MediaQuery.of(context).size.width*0.25)),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.032,
+            ),
+            Expanded(child: buildElevatedButton('Button 3', 'This Month',MediaQuery.of(context).size.width*0.25)),
+          ],
+        ),
+      );
   }
 
-  Widget buildElevatedButton(String buttonValue, String buttonText, double width) {
+  Widget buildElevatedButton(String buttonValue, String buttonText,double width) {
     return ElevatedButton(
       onPressed: () {
         _handleButtonSelection(buttonValue);
       },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) {
+              (Set<MaterialState> states) {
             return _selectedButton == buttonValue
                 ? const Color(0xFFDEFBB8)
                 : Colors.white;
           },
         ),
         shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
-          (Set<MaterialState> states) {
+              (Set<MaterialState> states) {
             if (_selectedButton != buttonValue) {
               return RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),

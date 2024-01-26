@@ -6,7 +6,7 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/BrowseEvents/Components/Upcomin
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/EventOrganiserProfile/Components/PostCreator/Posts.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/EventOrganiserProfile/Components/Time/PastPosts.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/EventOrganiserProfile/Components/Time/UpcomingPosts.dart';
-import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Components/username.dart';
+// import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Components/username.dart';
 
 class Organizer extends StatefulWidget {
   const Organizer({Key? key}) : super(key: key);

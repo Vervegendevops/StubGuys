@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/Components/ChoosePaymentMeth.dart';
+// import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/Components/ChoosePaymentMeth.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/Components/CircleImage.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/GetTickets/Step1.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/%20EventDetails/LocationFeatures/LocationRow.dart';

@@ -115,7 +115,7 @@ class _Step1State extends State<Step1> {
                                     MediaQuery.of(context).size.height * 0.27,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20.0),
-                          
+
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20.0),
