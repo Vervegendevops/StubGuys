@@ -10,6 +10,7 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/L&C/Lan
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Support/SupportMain.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChangePin.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChnagePassword.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_Notification.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_OM_Button.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_WithdrawMain.dart';
 
@@ -72,7 +73,13 @@ class _O_ProfileState extends State<O_Profile> {
                       ),
                       // Notification
                       GestureDetector(
-                        onTap: () => {},
+                        onTap: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NotificationPage(),
+                              ))
+                        },
                         child: Stack(
                           children: [
                             SvgPicture.asset(
@@ -215,12 +222,12 @@ class _O_ProfileState extends State<O_Profile> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   GestureDetector(
-                    // onTap: () => {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => const Favourites()),
-                    //   )
-                    // },
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const NotificationPage()),
+                      )
+                    }, 
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: IconTextRow(
@@ -293,7 +300,7 @@ class _O_ProfileState extends State<O_Profile> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   GestureDetector(
-                     onTap: () => {
+                    onTap: () => {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => WithdrawMain()),
