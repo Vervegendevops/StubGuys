@@ -7,6 +7,7 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Mainprofile.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/O_DashboardHome.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/ManageOrders/O_ManageOrders.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/O_MainProfile.dart';
+
 //hello with vgt
 class O_HomeFeed extends StatefulWidget {
   const O_HomeFeed({Key? key}) : super(key: key);
@@ -17,10 +18,9 @@ class O_HomeFeed extends StatefulWidget {
 
 class _O_HomeFeedState extends State<O_HomeFeed> {
   int _currentIndex = 4;
-  
 
   final List<Widget> _pages = [
-    O_Dashboard(),
+    const O_Dashboard(),
     const BrowseEvents(),
     AddPage(),
     const ManageOrders(),
@@ -36,7 +36,6 @@ class _O_HomeFeedState extends State<O_HomeFeed> {
         return true;
       },
       child: Scaffold(
-        
         body: _pages[_currentIndex],
         bottomNavigationBar: SizedBox(
           height: 80.0,
@@ -51,7 +50,7 @@ class _O_HomeFeedState extends State<O_HomeFeed> {
       backgroundColor: const Color(0xFFDEFBB8),
       type: BottomNavigationBarType.fixed,
       selectedItemColor: const Color(0xFF8DC73F),
-      unselectedItemColor: Color(0xFF696D61),
+      unselectedItemColor: const Color(0xFF696D61),
       iconSize: 30.0,
       currentIndex: _currentIndex,
       onTap: (index) {
@@ -74,23 +73,25 @@ class _O_HomeFeedState extends State<O_HomeFeed> {
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'Assets/ORGANISER_APP/Images/HomeFeed/ticket.svg',
-            width: 26,
-            height: 26,
+            width: 24,
+            height: 24,
             color: _currentIndex == 1
                 ? const Color(0xFF8DC73F)
                 : const Color(0xFF545454),
           ),
-          label: 'Ticketing',
+          label: 'Scan',
         ),
-        BottomNavigationBarItem(
+        const BottomNavigationBarItem(
           icon: CircleAvatar(
-            backgroundColor: const Color(0xFF8DC73F),
+            backgroundColor: Color(0xFF8DC73F),
             radius: 24, // Adjust the radius as needed
-            child: SvgPicture.asset(
-              'Assets/Images/Components/BottomNavigationBar/scan.svg',
-              width: 22,
-              height: 22,
-              color: Colors.white,
+            child: Text(
+              '+',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           label: '',

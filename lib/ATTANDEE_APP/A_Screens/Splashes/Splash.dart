@@ -55,7 +55,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
+        height: double.infinity, 
         width: double.infinity,
         color: const Color.fromARGB(255, 32, 19, 53),
         child: RotationTransition(

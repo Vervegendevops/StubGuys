@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PromptPay extends StatefulWidget {
-  const PromptPay({super.key});
+  final Function(int) onSave;
+  final List<String> svgPaths;
+  final int selectedPaymentMethod;
+
+  PromptPay({super.key,required this.onSave,
+    required this.svgPaths,
+    required this.selectedPaymentMethod,});
 
   @override
   State<PromptPay> createState() => _PromptPayState();
 }
 
-class _PromptPayState extends State<PromptPay> { 
-  int selectedpaymentmethod = -1;
+class _PromptPayState extends State<PromptPay> {
+  int selectedPaymentMethod = 2;
   // List of SVG file paths for each payment method
   List<String> svgPaths = [
     'Assets/Images/Components/Payment/card.svg',
@@ -23,11 +29,11 @@ class _PromptPayState extends State<PromptPay> {
     return Expanded(
       child: Container(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.28,
+        height: MediaQuery.of(context).size.height * 0.32,
         child: Padding(
-          padding: const EdgeInsets.only(left: 30.0, top: 30.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 15.0, top: 30.0, right: 10.0),
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text(
               "Choose your payment method",
               style: TextStyle(
@@ -44,25 +50,25 @@ class _PromptPayState extends State<PromptPay> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: List.generate(
                 4,
-                (index) => GestureDetector(
+                    (index) => GestureDetector(
                   onTap: () {
                     setState(() {
-                      selectedpaymentmethod = index;
+                      selectedPaymentMethod = index;
                     });
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(right: 22.0),
                     child: Container(
-                      width: 65.0,
+                      width: MediaQuery.of(context).size.width*0.16,
                       height: 42.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
                         border: Border.all(
-                          color: selectedpaymentmethod == index
+                          color: selectedPaymentMethod == index
                               ? Color(0xFF8DC73F) // Set selected border color
                               : Colors
-                                  .grey.shade300, // Set default border color
-                          width: selectedpaymentmethod == index ? 2.0 : 1.0,
+                              .grey.shade300, // Set default border color
+                          width: selectedPaymentMethod == index ? 2.0 : 1.0,
                         ),
                       ),
                       child: Center(
@@ -82,10 +88,8 @@ class _PromptPayState extends State<PromptPay> {
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => const Step2()),
-                      // );
+                      widget.onSave(selectedPaymentMethod);
+                      Navigator.pop(context);
                     },
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
@@ -98,7 +102,7 @@ class _PromptPayState extends State<PromptPay> {
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
                               15.0), // Set your desired border radius
-                         ),
+                        ),
                       ),
                     ),
                     child: Container(

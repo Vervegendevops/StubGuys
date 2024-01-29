@@ -252,7 +252,7 @@ class _O_ProfileState extends State<O_Profile> {
                       padding: const EdgeInsets.all(10.0),
                       child: IconTextRow(
                         iconData:
-                            "Assets/Images/Components/Profile/p_Notifications.svg",
+                            "Assets/Images/Components/Profile/p_Pass.svg",
                         text: "Change Password",
                       ),
                     ),
@@ -272,7 +272,7 @@ class _O_ProfileState extends State<O_Profile> {
                       padding: const EdgeInsets.all(10.0),
                       child: IconTextRow(
                         iconData:
-                            "Assets/Images/Components/Profile/p_Notifications.svg",
+                            "Assets/Images/Components/Profile/p_Pin.svg",
                         text: "Change your PIN",
                       ),
                     ),
