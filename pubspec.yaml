@@ -48,6 +48,7 @@ dependencies:
   video_player: ^2.4.4
   pinput: ^3.0.1
   google_maps_flutter: ^2.5.3
+  qr_code_scanner: ^1.0.1
 
 
 

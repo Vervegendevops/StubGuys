@@ -7,8 +7,9 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Mainprofile.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/O_DashboardHome.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/ManageOrders/O_ManageOrders.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/O_MainProfile.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_QR/QR.dart';
 
-//hello with vgt
+// ignore: camel_case_types
 class O_HomeFeed extends StatefulWidget {
   const O_HomeFeed({Key? key}) : super(key: key);
 
@@ -16,12 +17,13 @@ class O_HomeFeed extends StatefulWidget {
   State<O_HomeFeed> createState() => _O_HomeFeedState();
 }
 
+// ignore: camel_case_types
 class _O_HomeFeedState extends State<O_HomeFeed> {
   int _currentIndex = 4;
 
   final List<Widget> _pages = [
     const O_Dashboard(),
-    const BrowseEvents(),
+    QRViewExample(),
     AddPage(),
     const ManageOrders(),
     const O_Profile(),

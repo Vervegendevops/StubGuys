@@ -14,6 +14,8 @@ class O_Dashboard extends StatefulWidget {
 }
 
 class _O_DashboardState extends State<O_Dashboard> {
+  final List<String> texts = ['Text 1', 'Text 2', 'Text 3', 'Text 4', 'Text 5'];
+
   @override
   Widget build(BuildContext context) {
     var mQuery = MediaQuery.of(context);
@@ -201,7 +203,9 @@ class _O_DashboardState extends State<O_Dashboard> {
                   SizedBox(
                     height: mQuery.size.height * 0.03,
                   ),
-                  SalesChart(values: [100, 150, 200, 120, 180, 250, 170],),
+                  const SalesChart(
+                    values: [100, 150, 200, 120, 180, 250, 170],
+                  ),
                   SizedBox(
                     height: mQuery.size.height * 0.03,
                   ),
@@ -258,7 +262,7 @@ class _O_DashboardState extends State<O_Dashboard> {
                         ),
                         Center(
                           child: AnimatedPieChart(
-                            values: [55, 25, 20],
+                            values: const [55, 25, 20],
                           ),
                         ),
                         SizedBox(
@@ -334,6 +338,132 @@ class _O_DashboardState extends State<O_Dashboard> {
                   ),
                   SizedBox(
                     height: mQuery.size.height * 0.03,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 280,
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15.0)),
+                      border: Border.all(
+                        color: const Color(
+                            0xFFF1F1F2), // Adjust the border color as needed
+                        width: 1.0, // Adjust the border width as needed
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                            padding: EdgeInsets.only(
+                              left: 20.0,
+                              right: 20.0,
+                              top: 20.0,
+                              bottom: mQuery.size.height * 0.03,
+                            ),
+                            child: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Top Cities",
+                                      style: TextStyle(
+                                          fontSize: 16.0,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Color(0xFF201335)),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Palm Beach ",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Color(0xFF696D61)),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Texas",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Color(0xFF696D61)),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Los Angeles",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Color(0xFF696D61)),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Texas",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Color(0xFF696D61)),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Los Angeles",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontFamily: 'SatoshiMedium',
+                                          color: Color(0xFF696D61)),
+                                    ),
+                                  ],
+                                ),
+                                // ListView.builder(
+                                //   itemCount: texts.length,
+                                //   itemBuilder: (context, index) {
+                                //     return Row(
+                                //       children: [
+                                //         Text(
+                                //           texts[index],
+                                //           style: const TextStyle(
+                                //               fontSize: 10.0,
+                                //               fontFamily: 'SatoshiMedium',
+                                //               color: Color(0xFF696D61)),
+                                //         ),
+                                //       ],
+                                //     );
+                                //   },
+                                // ),
+                              ],
+                            )),
+                      ],
+                    ),
                   ),
                 ],
               ),
