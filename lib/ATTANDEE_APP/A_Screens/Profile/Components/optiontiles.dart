@@ -64,7 +64,7 @@ class _IconTextRowSwitchState extends State<IconTextRowSwitch> {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [ 
+          children: [
             SizedBox(width: 2.0),
             SizedBox(
               width: 30,
@@ -106,8 +106,6 @@ class _IconTextRowSwitchState extends State<IconTextRowSwitch> {
     );
   }
 }
-
-
 
 class IconTextRowSwitchOM extends StatefulWidget {
   final String iconData;
@@ -178,7 +176,8 @@ class _IconTextRowSwitchOMState extends State<IconTextRowSwitchOM> {
       // Navigate to the new page and wait for the result
       bool result = await Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => O_HomeFeed(), // Replace YourNewPage with the actual widget/page you want to navigate to
+          builder: (context) =>
+              O_HomeFeed(), // Replace YourNewPage with the actual widget/page you want to navigate to
         ),
       );
 

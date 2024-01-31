@@ -88,6 +88,7 @@ flutter:
     - Assets/Images/
     - Assets/epic/
     - Assets/Images/Icon/
+    - Assets/icons/
     - Assets/Images/Icon/HelpSupport/
     - Assets/Images/Components/BottomNavigationBar/
   #   - images/a_dot_ham.jpeg

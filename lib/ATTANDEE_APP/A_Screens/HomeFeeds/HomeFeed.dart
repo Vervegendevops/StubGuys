@@ -27,7 +27,7 @@ class _HomeFeedState extends State<HomeFeed> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-       onWillPop: () async {
+      onWillPop: () async {
         // Close the app when the back button is pressed
         SystemNavigator.pop();
         return true;
@@ -35,7 +35,7 @@ class _HomeFeedState extends State<HomeFeed> {
       child: Scaffold(
         body: _pages[_currentIndex],
         bottomNavigationBar: SizedBox(
-          height: 80.0,
+          // height: 95.0,
           child: buildBottomNavigationBar(),
         ),
       ),
