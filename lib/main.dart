@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      // home: HomeFeed(),
+      home: HomeFeed(),
       // home: ChatPage(),
-      home: PasswordPage(),
+      // home: PasswordPage(),
     );
   }
 }
