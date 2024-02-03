@@ -55,6 +55,7 @@ class _BrowseEventsState extends State<BrowseEvents> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
