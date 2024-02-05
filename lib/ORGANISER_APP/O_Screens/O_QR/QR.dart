@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d603c854bf3231d1885aec50d801159f8491b637
 class QRViewExample extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _QRViewExampleState();
 }
 
 class _QRViewExampleState extends State<QRViewExample> {
+<<<<<<< HEAD
   late GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+=======
+  late final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+>>>>>>> d603c854bf3231d1885aec50d801159f8491b637
   late QRViewController controller;
   late String qrText;
 
