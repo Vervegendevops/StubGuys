@@ -1,4 +1,5 @@
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/Login.dart';
+import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/MobileOtp/OTP1.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/OTP.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -163,8 +164,8 @@ class _SignUpState extends State<SignUp> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const otp()),
-                            );
+                                  builder: (context) => const OTP1()),
+                            ); 
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.zero,

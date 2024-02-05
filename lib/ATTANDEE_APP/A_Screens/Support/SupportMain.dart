@@ -22,11 +22,11 @@ class _SupportmainState extends State<Supportmain> {
                 Container(
                   color: const Color(0xFF201335),
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.28,
+                  height: MediaQuery.of(context).size.height * 0.245,
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 50.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 35.0),
                   child: Column(
                     children: [
                       //Cross and logo
@@ -42,11 +42,12 @@ class _SupportmainState extends State<Supportmain> {
                             'Assets/Images/Icon/HelpSupport/cross.svg',
                             height: 40.0,
                             width: 40.0,
+                            color: Colors.white,
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.04,
+                        height: MediaQuery.of(context).size.height * 0.016,
                       ),
                       // name section
                       Column(
@@ -58,7 +59,7 @@ class _SupportmainState extends State<Supportmain> {
                                 "Hello Cavil ",
                                 style: TextStyle(
                                   color: Color(0xFF8DC73F),
-                                  fontSize: 30,
+                                  fontSize: 24,
                                   fontFamily: 'SatoshiBold',
                                 ),
                               ),
@@ -76,7 +77,7 @@ class _SupportmainState extends State<Supportmain> {
                             "How can we help? ",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 30,
+                              fontSize: 24,
                               fontFamily: 'SatoshiBold',
                             ),
                           ),
@@ -233,7 +234,7 @@ class _SupportmainState extends State<Supportmain> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
                           color: const Color(0xFFF1F1F2),
                           width: 1.0,
@@ -241,10 +242,11 @@ class _SupportmainState extends State<Supportmain> {
                       ),
                       child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 15.0, right: 12.0, top: 15.0, bottom: 15.0),
+                              left: 15.0, right: 12.0, top: 12.0, bottom: 2.0),
                           child: Column(
                             children: [
                               TextField(
+                                cursorColor: Colors.grey,
                                 decoration: InputDecoration(
                                   filled: true,
                                   fillColor: const Color(
@@ -254,7 +256,7 @@ class _SupportmainState extends State<Supportmain> {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15,
                                       color: Color(0xFFABAFB1)),
-                                  contentPadding: const EdgeInsets.all(16.0),
+                                  contentPadding: const EdgeInsets.all(10.0),
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         12.0), // Set the border radius
@@ -302,7 +304,7 @@ class _SupportmainState extends State<Supportmain> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(
-                          left: 15.0, right: 12.0, top: 15.0, bottom: 15.0),
+                          left: 15.0, right: 12.0, top: 15.0, bottom: 10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -319,9 +321,8 @@ class _SupportmainState extends State<Supportmain> {
                           ),
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Colors
-                                  .white, // Set the background color for TextField
+                              borderRadius: BorderRadius.circular(8.0),
+                              color: Colors.white, // Set the background color for TextField
                               border: Border.all(
                                 color: const Color(
                                     0xFFF1F1F2), // Set the border color for Container
@@ -351,9 +352,9 @@ class _SupportmainState extends State<Supportmain> {
                             height: MediaQuery.of(context).size.height * 0.01,
                           ),
                           Container(
-                            height: 100,
+                            height: 95,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
+                              borderRadius: BorderRadius.circular(8.0),
                               color: const Color(
                                   0xFFF9F9F9), // Set the background color
                               border: Border.all(
@@ -371,9 +372,9 @@ class _SupportmainState extends State<Supportmain> {
                                     'Let us know what we should add next or leave a suggestion',
                                 hintStyle: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     color: Color(0xFFABAFB1)),
-                                contentPadding: EdgeInsets.all(16.0),
+                                contentPadding: EdgeInsets.only(left: 16,right: 16,bottom: 10),
                                 border: InputBorder.none, // Remove the border
                                 focusedBorder: InputBorder
                                     .none, // Remove the focused border
@@ -387,43 +388,36 @@ class _SupportmainState extends State<Supportmain> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  //Button
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Add your button press logic here
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors
-                            .white, // Set the background color of the button to white
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0),
-                          side: const BorderSide(
-                            color: Colors.black, // Set the border color
-                            width: 1.0, // Set the border width
-                          ),
-                        ),
+
+                  GestureDetector(
+                    onTap: ()
+                    {
+                      // Add your button press logic here
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15.0),
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 1
+                        )
                       ),
-                      child: Container(
-                        width: 200.0, // Set the width of the button
-                        height: 50.0, // Set the height of the button
-                        child: const Center(
-                          child: Text(
-                            "Submit",
-                            style: TextStyle(
-                              color: Color(0xFF201335),
-                              fontSize: 16,
-                              fontFamily: 'SatoshiBold',
-                            ),
-                          ),
-                        ),
-                      ),
+                      child: const Center(
+                                child: Text(
+                                  "Submit",
+                                  style: TextStyle(
+                                    color: Color(0xFF201335),
+                                    fontSize: 16,
+                                    fontFamily: 'SatoshiBold',
+                                  ),
+                                ),
+                    ),
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.03,
-                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                 ],
               ),
             )

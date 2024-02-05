@@ -1,3 +1,4 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Splashes/SplashWelcome0.dart';
 import 'package:flutter/material.dart';
 
@@ -18,13 +19,13 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 5),
     );
 
     _animation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Curves.easeInOut,
+        curve: Curves.linear,
       ),
     );
 
@@ -32,18 +33,20 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacement(
-          PageRouteBuilder(
-            pageBuilder: (_, __, ___) => SplashWelcome0(),
-            transitionsBuilder: (_, animation, __, child) {
-              return FadeTransition(
-                opacity: animation,
-                child: child,
-              );
-            },
-            transitionDuration: Duration(seconds: 3),
-          ),
-        );
+        Future.delayed(Duration(milliseconds: 200), () {
+          Navigator.of(context).pushReplacement(
+            PageRouteBuilder(
+              pageBuilder: (_, __, ___) => SplashWelcome0(),
+              transitionsBuilder: (_, animation, __, child) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: child,
+                );
+              },
+              transitionDuration: Duration(seconds: 2),
+            ),
+          );
+        });
       }
     });
   }
@@ -52,10 +55,16 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
+        height: double.infinity, 
         width: double.infinity,
         color: const Color.fromARGB(255, 32, 19, 53),
-        child: Image.asset("Assets/Images/Icon/stubguys.png"),
+        child: RotationTransition(
+          turns: _animation,
+          child: Transform.scale(
+            scale: 0.2,
+            child: SvgPicture.asset("Assets/Images/Icon/Vector.svg"),
+          ),
+        ),
       ),
     );
   }

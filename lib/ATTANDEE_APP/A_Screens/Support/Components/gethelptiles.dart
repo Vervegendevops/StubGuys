@@ -22,7 +22,9 @@ class _GetHelptilesState extends State<GetHelptiles> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.only(
+            left: 15,right: 15,top: 10,bottom: 5
+          ),
           child: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

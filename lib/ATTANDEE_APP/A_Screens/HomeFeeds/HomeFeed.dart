@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/BrowseEvents/BrowseEvents.dart';
-import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/Components/reels.dart';
+import 'package:stub_guys/ATTANDEE_APP/A_Screens/HomeFeeds/Components/Reels/reels.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/MyTickets/Mytickets.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Mainprofile.dart';
 
@@ -16,7 +17,7 @@ class _HomeFeedState extends State<HomeFeed> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    reels(),
+    Reels(),
     const BrowseEvents(),
     AddPage(),
     const MyTickets(),
@@ -25,11 +26,18 @@ class _HomeFeedState extends State<HomeFeed> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_currentIndex],
-      bottomNavigationBar: SizedBox(
-        height: 80.0,
-        child: buildBottomNavigationBar(),
+    return WillPopScope(
+       onWillPop: () async {
+        // Close the app when the back button is pressed
+        SystemNavigator.pop();
+        return true;
+      },
+      child: Scaffold(
+        body: _pages[_currentIndex],
+        bottomNavigationBar: SizedBox(
+          height: 80.0,
+          child: buildBottomNavigationBar(),
+        ),
       ),
     );
   }
