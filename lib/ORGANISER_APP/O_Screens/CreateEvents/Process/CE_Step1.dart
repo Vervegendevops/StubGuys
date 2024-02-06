@@ -664,9 +664,6 @@ class _CE_Step1State extends State<CE_Step1> {
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
 
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
-                  ),
                   GestureDetector(
                     onTap: () {
                       _LocationType(context);

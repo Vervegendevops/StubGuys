@@ -283,6 +283,126 @@ class _CE_Step3State extends State<CE_Step3> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
+                  const Text(
+                    "Describe your event (short)",
+                    style: TextStyle(
+                      color: Color(0xFF5E6366),
+                      fontSize: 12,
+                      fontFamily: 'SatoshiMedium',
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 1.0,
+                    height: MediaQuery.of(context).size.height * 0.065,
+                    child: Theme(
+                      data: ThemeData(
+                        textTheme: const TextTheme(
+                          subtitle1: TextStyle(
+                            fontSize: 13.0,
+                            color: Color(0xFFABAFB1),
+                            fontFamily: 'SatoshiRegular',
+                          ),
+                        ),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xFF8DC73F)),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xFF8DC73F)),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          labelText: 'Keep it short and straight to the point',
+                          suffixIcon: SvgPicture.asset(
+                              "Assets/Images/Components/generate.svg"),
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "0/150",
+                        style: TextStyle(
+                          color: Color(0xFFABAFB1),
+                          fontSize: 12,
+                          fontFamily: 'SatoshiRegular',
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  const Text(
+                    "Full Summary",
+                    style: TextStyle(
+                      color: Color(0xFF5E6366),
+                      fontSize: 12,
+                      fontFamily: 'SatoshiMedium',
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 1.0,
+                    height: MediaQuery.of(context).size.height * 0.065,
+                    child: Theme(
+                      data: ThemeData(
+                        textTheme: const TextTheme(
+                          subtitle1: TextStyle(
+                            fontSize: 13.0,
+                            color: Color(0xFFABAFB1),
+                            fontFamily: 'SatoshiRegular',
+                          ),
+                        ),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xFF8DC73F)),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xFF8DC73F)),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          labelText: 'Keep it short and straight to the point',
+                          suffixIcon: SvgPicture.asset(
+                              "Assets/Images/Components/generate.svg"),
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "0/150",
+                        style: TextStyle(
+                          color: Color(0xFFABAFB1),
+                          fontSize: 12,
+                          fontFamily: 'SatoshiRegular',
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
                   //buttons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
