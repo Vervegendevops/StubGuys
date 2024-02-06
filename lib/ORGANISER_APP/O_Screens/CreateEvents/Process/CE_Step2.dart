@@ -1,195 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/Components/HashTextField.dart';
-import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/Process/CE_Step2.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/Process/CE_Step3.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-class CE_Step1 extends StatefulWidget {
-  const CE_Step1({super.key});
+class CE_Step2 extends StatefulWidget {
+  const CE_Step2({super.key});
 
   @override
-  State<CE_Step1> createState() => _CE_Step1State();
+  State<CE_Step2> createState() => _CE_Step2State();
 }
 
-class _CE_Step1State extends State<CE_Step1> {
-  String selectedAccountType = "Checking";
-  String selectedEventType = "Physical";
+class _CE_Step2State extends State<CE_Step2> {
+  String selectedEventOccur = "Single";
 
-  void _onEventTypeSelected(String accountType) {
-    // Close the bottom sheet
-    setState(() {
-      selectedAccountType = accountType; // Update the selected account type
-    });
-    Navigator.of(context).pop();
-  }
-
-  void _onLocationTypeSelected(String locationType) {
-    // Close the bottom sheet
-    setState(() {
-      selectedEventType = locationType; // Update the selected account type
-    });
-    Navigator.of(context).pop();
-  }
-
-  void _showEventType(BuildContext context) {
-    showModalBottomSheet(
+  void _showCalendarPopup(BuildContext context) {
+    showDialog(
       context: context,
       builder: (BuildContext context) {
-        var mQuery = MediaQuery.of(context);
-        return Container(
-            height: mQuery.size.height * 0.42,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: mQuery.size.height * 0.048,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "Event Type",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color(0xff201335),
-                              fontFamily: 'SatoshiBold'),
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.close,
-                            color: Color(0xff545454),
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: mQuery.size.height * 0.02,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      _onEventTypeSelected("Checking");
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.067,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: selectedAccountType == "Checking"
-                              ? const Color(
-                                  0xff8DC73F) // Set the border color to green when selected
-                              : const Color(0xFFF1F1F2),
-                        ),
-                        color: selectedAccountType == "Checking"
-                            ? const Color(0xffF0FFDD)
-                            : Colors.transparent,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 16, right: 30),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Checking",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  color: selectedAccountType == "Checking"
-                                      ? const Color(0xff8DC73F)
-                                      : const Color(0xff201335),
-                                  fontFamily: 'SatoshiMedium'),
-                            ),
-                            if (selectedAccountType == "Checking")
-                              if (selectedAccountType == "Checking")
-                                SvgPicture.asset(
-                                    "Assets/ORGANISER_APP/Images/O_Profile/prime_check-circle.svg")
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: mQuery.size.height * 0.02,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      _onEventTypeSelected("Savings");
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.067,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: selectedAccountType == "Savings"
-                              ? const Color(
-                                  0xff8DC73F) // Set the border color to green when selected
-                              : const Color(0xFFF1F1F2),
-                        ),
-                        color: selectedAccountType == "Savings"
-                            ? const Color(0xffF0FFDD)
-                            : Colors.transparent,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 16, right: 30),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Savings",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  color: selectedAccountType == "Savings"
-                                      ? const Color(0xff8DC73F)
-                                      : const Color(0xff201335),
-                                  fontFamily: 'SatoshiMedium'),
-                            ),
-                            if (selectedAccountType == "Savings")
-                              SvgPicture.asset(
-                                  "Assets/ORGANISER_APP/Images/O_Profile/prime_check-circle.svg")
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: mQuery.size.height * 0.05,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedAccountType = selectedAccountType;
-                      });
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 16),
-                      width: double.infinity,
-                      height: mQuery.size.height * 0.055,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: const Color(0xff201335)),
-                      child: const Center(
-                        child: Text(
-                          "Save",
-                          style: TextStyle(
-                              color: Color(0xffF1F1F2),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: 'SatoshiMedium'),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ));
+        return AlertDialog(
+          content: Container(
+            height: MediaQuery.of(context).size.height * 0.5,
+            child: TableCalendar(
+              focusedDay: DateTime.now(),
+              firstDay: DateTime.now(),
+              lastDay: DateTime.now(),
+            ),
+          ),
+        );
       },
     );
   }
 
-  void _LocationType(BuildContext context) {
+  void _onOccurTypeSelected(String locationType) {
+    // Close the bottom sheet
+    setState(() {
+      selectedEventOccur = locationType; // Update the selected account type
+    });
+    Navigator.of(context).pop();
+  }
+
+  void _onOccurType(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
@@ -208,7 +59,7 @@ class _CE_Step1State extends State<CE_Step1> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          "Location",
+                          "Event Occurrence",
                           style: TextStyle(
                               fontSize: 20,
                               color: Color(0xff201335),
@@ -231,19 +82,19 @@ class _CE_Step1State extends State<CE_Step1> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      _onLocationTypeSelected("Physical");
+                      _onOccurTypeSelected("Single");
                     },
                     child: Container(
                       width: double.infinity,
                       height: mQuery.size.height * 0.067,
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: selectedEventType == "Physical"
+                          color: selectedEventOccur == "Single"
                               ? const Color(
                                   0xff8DC73F) // Set the border color to green when selected
                               : const Color(0xFFF1F1F2),
                         ),
-                        color: selectedEventType == "Physical"
+                        color: selectedEventOccur == "Single"
                             ? const Color(0xffF0FFDD)
                             : Colors.transparent,
                       ),
@@ -253,15 +104,15 @@ class _CE_Step1State extends State<CE_Step1> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Physical",
+                              "Single",
                               style: TextStyle(
                                   fontSize: 13,
-                                  color: selectedEventType == "Physical"
+                                  color: selectedEventOccur == "Single"
                                       ? const Color(0xff8DC73F)
                                       : const Color(0xff201335),
                                   fontFamily: 'SatoshiMedium'),
                             ),
-                            if (selectedEventType == "Physical")
+                            if (selectedEventOccur == "Single")
                               SvgPicture.asset(
                                   "Assets/ORGANISER_APP/Images/O_Profile/prime_check-circle.svg")
                           ],
@@ -274,19 +125,19 @@ class _CE_Step1State extends State<CE_Step1> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      _onLocationTypeSelected("Virtual");
+                      _onOccurTypeSelected("Recurring");
                     },
                     child: Container(
                       width: double.infinity,
                       height: mQuery.size.height * 0.067,
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: selectedEventType == "Virtual"
+                          color: selectedEventOccur == "Recurring"
                               ? const Color(
                                   0xff8DC73F) // Set the border color to green when selected
                               : const Color(0xFFF1F1F2),
                         ),
-                        color: selectedEventType == "Virtual"
+                        color: selectedEventOccur == "Recurring"
                             ? const Color(0xffF0FFDD)
                             : Colors.transparent,
                       ),
@@ -296,15 +147,15 @@ class _CE_Step1State extends State<CE_Step1> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Virtual",
+                              "Recurring",
                               style: TextStyle(
                                   fontSize: 13,
-                                  color: selectedEventType == "Virtual"
+                                  color: selectedEventOccur == "Recurring"
                                       ? const Color(0xff8DC73F)
                                       : const Color(0xff201335),
                                   fontFamily: 'SatoshiMedium'),
                             ),
-                            if (selectedEventType == "Virtual")
+                            if (selectedEventOccur == "Recurring")
                               SvgPicture.asset(
                                   "Assets/ORGANISER_APP/Images/O_Profile/prime_check-circle.svg")
                           ],
@@ -317,19 +168,19 @@ class _CE_Step1State extends State<CE_Step1> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      _onLocationTypeSelected("TBA");
+                      _onOccurTypeSelected("TBA");
                     },
                     child: Container(
                       width: double.infinity,
                       height: mQuery.size.height * 0.067,
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: selectedEventType == "TBA"
+                          color: selectedEventOccur == "TBA"
                               ? const Color(
                                   0xff8DC73F) // Set the border color to green when selected
                               : const Color(0xFFF1F1F2),
                         ),
-                        color: selectedEventType == "TBA"
+                        color: selectedEventOccur == "TBA"
                             ? const Color(0xffF0FFDD)
                             : Colors.transparent,
                       ),
@@ -342,12 +193,12 @@ class _CE_Step1State extends State<CE_Step1> {
                               "TBA",
                               style: TextStyle(
                                   fontSize: 13,
-                                  color: selectedEventType == "TBA"
+                                  color: selectedEventOccur == "TBA"
                                       ? const Color(0xff8DC73F)
                                       : const Color(0xff201335),
                                   fontFamily: 'SatoshiMedium'),
                             ),
-                            if (selectedEventType == "Savings")
+                            if (selectedEventOccur == "Savings")
                               SvgPicture.asset(
                                   "Assets/ORGANISER_APP/Images/O_Profile/prime_check-circle.svg")
                           ],
@@ -361,7 +212,7 @@ class _CE_Step1State extends State<CE_Step1> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedEventType = selectedEventType;
+                        selectedEventOccur = selectedEventOccur;
                       });
                     },
                     child: Container(
@@ -420,7 +271,7 @@ class _CE_Step1State extends State<CE_Step1> {
                           ),
                         ),
                         SvgPicture.asset(
-                          'Assets/Images/Components/createevent1.svg',
+                          'Assets/Images/Components/createevent2.svg',
                           width: 50,
                           height: 50,
                         ),
@@ -438,9 +289,72 @@ class _CE_Step1State extends State<CE_Step1> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  //Event title
+                  //Event occurence
+
                   const Text(
-                    "Event Title",
+                    "Event Occurrence",
+                    style: TextStyle(
+                      color: Color(0xFF5E6366),
+                      fontSize: 12,
+                      fontFamily: 'SatoshiMedium',
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _onOccurType(context);
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        width: MediaQuery.of(context).size.width * 1.0,
+                        height: MediaQuery.of(context).size.height * 0.06,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8.0)),
+                          border: Border.all(
+                            color: const Color(0xFFF1F1F2),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              selectedEventOccur,
+                              style: const TextStyle(
+                                color: Color(0xFFABAFB1),
+                                fontSize: 13,
+                                fontFamily: 'SatoshiMedium',
+                              ),
+                            ),
+                            const Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Color(0xFF5E6366),
+                            )
+                          ],
+                        )),
+                  ),
+                  //sample text
+
+                  const Row(
+                    children: [
+                      Text(
+                        "Only happen once but can last more than a day",
+                        style: TextStyle(
+                          color: Color(0xFF5E6366),
+                          fontSize: 10,
+                          fontFamily: 'SatoshiMedium',
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
+                  const Text(
+                    "Event beginning date",
                     style: TextStyle(
                       color: Color(0xFF5E6366),
                       fontSize: 12,
@@ -450,58 +364,41 @@ class _CE_Step1State extends State<CE_Step1> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 1.0,
-                    height: MediaQuery.of(context).size.height * 0.065,
-                    child: Theme(
-                      data: ThemeData(
-                        textTheme: const TextTheme(
-                          subtitle1: TextStyle(
-                            fontSize: 13.0,
-                            color: Color(0xFFABAFB1),
-                            fontFamily: 'SatoshiRegular',
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        width: MediaQuery.of(context).size.width * 1.0,
+                        height: MediaQuery.of(context).size.height * 0.06,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8.0)),
+                          border: Border.all(
+                            color: const Color(0xFFF1F1F2),
                           ),
                         ),
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFF8DC73F)),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFF8DC73F)),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          labelText: 'Keep it short and straight to the point',
-                          suffixIcon: SvgPicture.asset(
-                              "Assets/Images/Components/generate.svg"),
-                          floatingLabelBehavior: FloatingLabelBehavior.never,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "0/80",
-                        style: TextStyle(
-                          color: Color(0xFFABAFB1),
-                          fontSize: 12,
-                          fontFamily: 'SatoshiRegular',
-                        ),
-                      ),
-                    ],
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset("Assets/Images/Icon/cal.svg"),
+                            const SizedBox(width: 10.0),
+                            const Text(
+                              "07/16/2023",
+                              style: TextStyle(
+                                color: Color(0xFFABAFB1),
+                                fontSize: 13,
+                                fontFamily: 'SatoshiMedium',
+                              ),
+                            ),
+                          ],
+                        )),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.005,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  //Event Organizer
+
                   const Text(
-                    "Event Organizer",
+                    "Time of commencement",
                     style: TextStyle(
                       color: Color(0xFF5E6366),
                       fontSize: 12,
@@ -536,60 +433,17 @@ class _CE_Step1State extends State<CE_Step1> {
                                 const BorderSide(color: Color(0xFFF1F1F2)),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          labelText: 'Who is the organizer of this event',
+                          labelText: '7:00PM',
                           floatingLabelBehavior: FloatingLabelBehavior.never,
                         ),
                       ),
                     ),
                   ),
-                  //Category
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  //Event title
-                  const Text(
-                    "Category",
-                    style: TextStyle(
-                      color: Color(0xFF5E6366),
-                      fontSize: 12,
-                      fontFamily: 'SatoshiMedium',
-                    ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
-                  ),
-                  //category
-                  Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      width: MediaQuery.of(context).size.width * 1.0,
-                      height: MediaQuery.of(context).size.height * 0.06,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(8.0)),
-                        border: Border.all(
-                          color: const Color(0xFFF1F1F2),
-                        ),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Music",
-                            style: TextStyle(
-                              color: Color(0xFFABAFB1),
-                              fontSize: 13,
-                              fontFamily: 'SatoshiMedium',
-                            ),
-                          ),
-                          Icon(Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFF5E6366))
-                        ],
-                      )),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   const Text(
-                    "Event type",
+                    "Event closing date",
                     style: TextStyle(
                       color: Color(0xFF5E6366),
                       fontSize: 12,
@@ -600,9 +454,7 @@ class _CE_Step1State extends State<CE_Step1> {
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      _showEventType(context);
-                    },
+                    onTap: () {},
                     child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         width: MediaQuery.of(context).size.width * 1.0,
@@ -615,20 +467,18 @@ class _CE_Step1State extends State<CE_Step1> {
                           ),
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              selectedAccountType,
-                              style: const TextStyle(
+                            SvgPicture.asset("Assets/Images/Icon/cal.svg"),
+                            const SizedBox(width: 10.0),
+                            const Text(
+                              "07/16/2023",
+                              style: TextStyle(
                                 color: Color(0xFFABAFB1),
                                 fontSize: 13,
                                 fontFamily: 'SatoshiMedium',
                               ),
                             ),
-                            const Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: Color(0xFF5E6366),
-                            )
                           ],
                         )),
                   ),
@@ -636,7 +486,7 @@ class _CE_Step1State extends State<CE_Step1> {
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   const Text(
-                    "Hashtags",
+                    "Time of conclusion",
                     style: TextStyle(
                       color: Color(0xFF5E6366),
                       fontSize: 12,
@@ -646,22 +496,47 @@ class _CE_Step1State extends State<CE_Step1> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
-                  const HashTag(),
-                  //Location
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 1.0,
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    child: Theme(
+                      data: ThemeData(
+                        textTheme: const TextTheme(
+                          subtitle1: TextStyle(
+                            fontSize: 13.0,
+                            color: Color(0xFFABAFB1),
+                            fontFamily: 'SatoshiRegular',
+                          ),
+                        ),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xFFF1F1F2)),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Color(0xFFF1F1F2)),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          labelText: '10:00PM',
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                        ),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-
                   const Text(
-                    "Location",
+                    "Timezone",
                     style: TextStyle(
                       color: Color(0xFF5E6366),
                       fontSize: 12,
                       fontFamily: 'SatoshiMedium',
                     ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
                   ),
 
                   SizedBox(
@@ -669,7 +544,7 @@ class _CE_Step1State extends State<CE_Step1> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      _LocationType(context);
+                      // _onOccurType(context);
                     },
                     child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -682,86 +557,28 @@ class _CE_Step1State extends State<CE_Step1> {
                             color: const Color(0xFFF1F1F2),
                           ),
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              selectedEventType,
-                              style: const TextStyle(
+                              "(GMT-05:00) United States (New York)...",
+                              style: TextStyle(
                                 color: Color(0xFFABAFB1),
                                 fontSize: 13,
                                 fontFamily: 'SatoshiMedium',
                               ),
                             ),
-                            const Icon(
+                            Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: Color(0xFF5E6366),
                             )
                           ],
                         )),
                   ),
-                  //Venue Address
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
+                    height: MediaQuery.of(context).size.height * 0.13,
                   ),
-                  //Event Organizer
-                  if (selectedEventType == "Physical" ||
-                      selectedEventType == "Virtual")
-                    Text(
-                      selectedEventType == "Physical"
-                          ? "Venue address"
-                          : "Meeting Link",
-                      style: const TextStyle(
-                        color: Color(0xFF5E6366),
-                        fontSize: 12,
-                        fontFamily: 'SatoshiMedium',
-                      ),
-                    ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
-                  ),
-                  if (selectedEventType == "TBA")
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.06,
-                    ),
-                  if (selectedEventType == "Physical" ||
-                      selectedEventType == "Virtual")
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 1.0,
-                      height: MediaQuery.of(context).size.height * 0.06,
-                      child: Theme(
-                        data: ThemeData(
-                          textTheme: const TextTheme(
-                            subtitle1: TextStyle(
-                              fontSize: 13.0,
-                              color: Color(0xFFABAFB1),
-                              fontFamily: 'SatoshiRegular',
-                            ),
-                          ),
-                        ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: Color(0xFFF1F1F2)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: Color(0xFFF1F1F2)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            labelText: selectedEventType == "Physical"
-                                ? "123 Address"
-                                : "https://",
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                          ),
-                        ),
-                      ),
-                    ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
+                  //buttons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -784,7 +601,7 @@ class _CE_Step1State extends State<CE_Step1> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CE_Step2()),
+                                builder: (context) => const CE_Step3()),
                           );
                         },
                         style: ElevatedButton.styleFrom(

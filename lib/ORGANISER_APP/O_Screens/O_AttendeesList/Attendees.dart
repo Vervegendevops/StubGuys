@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_AttendeesList/Components/FilterBottom.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_AttendeesList/Components/UserTile.dart';
 
 class O_Attendees extends StatefulWidget {
   const O_Attendees({super.key});
-
+ 
   @override
   State<O_Attendees> createState() => O__AttendeesState();
 }
 
 class O__AttendeesState extends State<O_Attendees> {
-  //   void _searchevents() {
-  //   showModalBottomSheet(
-  //     context: context,
-  //     builder: (BuildContext context) {
-  //       return SeatchEvents(); // Replace with your filter widget
-  //     },
-  //   );
-  // }
+    void _searchevents() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return FiltersBottom(); // Replace with your filter widget
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,11 +73,12 @@ class O__AttendeesState extends State<O_Attendees> {
                       width: 10.0,
                     ),
                     GestureDetector(
-                      // onTap: _searchevents,
+                      onTap: _searchevents,
                       child: Container(
                         width: 40.0,
                         height: 40.0,
                         decoration: BoxDecoration(
+                          color: Color(0xFFDEFBB8),
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: const Color(

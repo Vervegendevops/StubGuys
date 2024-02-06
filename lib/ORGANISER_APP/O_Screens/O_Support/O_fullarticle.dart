@@ -89,7 +89,7 @@ class _O_FullArticleState extends State<O_FullArticle> {
                     'information.\n'
                     '\nSelect your ticket type, if applicable, and proceed to'
                     'the secure payment section.\n'
-                    '\n After payment, you\'ll receive a confirmation email or'
+                    '\nAfter payment, you\'ll receive a confirmation email or'
                     'digital ticket making your entry hassle-free.\n '
                     '\nRegistration helps organizers plan and personalize the'
                     'event for attendees.',

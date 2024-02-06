@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Support/Components/queries.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Support/GetHelp.dart';
 
-class O_Supportmain extends StatefulWidget {
+class O_Supportmain extends StatefulWidget { 
   const O_Supportmain({super.key});
 
   @override
@@ -26,7 +26,7 @@ class _O_SupportmainState extends State<O_Supportmain> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 35.0),
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 60.0),
                   child: Column(
                     children: [
                       //Cross and logo

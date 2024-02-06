@@ -9,7 +9,7 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/Mainprofile.dart';
 class HomeFeed extends StatefulWidget {
   const HomeFeed({Key? key}) : super(key: key);
 
-  @override
+  @override 
   State<HomeFeed> createState() => _HomeFeedState();
 }
 

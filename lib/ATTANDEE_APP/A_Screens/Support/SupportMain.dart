@@ -272,7 +272,7 @@ class _SupportmainState extends State<Supportmain> {
                                     color: Colors.grey,
                                   ), // Add the search icon
                                 ),
-                              ),
+                              ), 
                               const SizedBox(
                                 height: 7.0,
                               ),
