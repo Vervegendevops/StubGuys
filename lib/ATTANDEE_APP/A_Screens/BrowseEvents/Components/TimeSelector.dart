@@ -11,28 +11,28 @@ class _TimeSelectorState extends State<TimeSelector> {
   TextEditingController _selectedButtonController = TextEditingController();
   String _selectedButton = 'Button 1';
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 0.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          buildElevatedButton('Button 1', 'Today', 50.0),
+          buildElevatedButton('Button 1', 'Today',),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.04,
           ),
-          buildElevatedButton('Button 2', 'This Week', 70.0),
+          buildElevatedButton('Button 2', 'This Week',),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.04,
           ),
-          buildElevatedButton('Button 3', 'This Month', 80.0),
+          buildElevatedButton('Button 3', 'This Month',),
         ],
       ),
     );
   }
 
-  Widget buildElevatedButton(String buttonValue, String buttonText, double width) {
+  Widget buildElevatedButton(String buttonValue, String buttonText) {
     return ElevatedButton(
       onPressed: () {
         _handleButtonSelection(buttonValue);
@@ -64,7 +64,7 @@ class _TimeSelectorState extends State<TimeSelector> {
         elevation: MaterialStateProperty.all(0),
       ),
       child: Container(
-        width: width,
+        
         height: 50,
         child: Center(
           child: Text(

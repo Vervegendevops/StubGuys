@@ -55,6 +55,7 @@ class _BrowseEventsState extends State<BrowseEvents> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,7 +152,7 @@ class _BrowseEventsState extends State<BrowseEvents> {
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
               TimeSelector(),
-              SizedBox(
+              SizedBox( 
                 height: MediaQuery.of(context).size.height * 0.03,
               ), 
               ListView.builder(

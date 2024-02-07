@@ -8,7 +8,11 @@ import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/Editpro
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/Favourites.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Profile/ProfileSections/L&C/Language.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/Support/SupportMain.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChangePin.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_ChnagePassword.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_Notification.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/O_OM_Button.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/O_Profile/Components/Withdraw/O_WithdrawMain.dart';
 
 class O_Profile extends StatefulWidget {
   const O_Profile({Key? key}) : super(key: key);
@@ -69,7 +73,13 @@ class _O_ProfileState extends State<O_Profile> {
                       ),
                       // Notification
                       GestureDetector(
-                        onTap: () => {},
+                        onTap: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NotificationPage(),
+                              ))
+                        },
                         child: Stack(
                           children: [
                             SvgPicture.asset(
@@ -212,12 +222,12 @@ class _O_ProfileState extends State<O_Profile> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   GestureDetector(
-                    // onTap: () => {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => const Favourites()),
-                    //   )
-                    // },
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const NotificationPage()),
+                      )
+                    }, 
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: IconTextRow(
@@ -230,12 +240,21 @@ class _O_ProfileState extends State<O_Profile> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: IconTextRow(
-                      iconData:
-                          "Assets/Images/Components/Profile/p_Notifications.svg",
-                      text: "Change Password",
+                  GestureDetector(
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PasswordPage()),
+                      )
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: IconTextRow(
+                        iconData:
+                            "Assets/Images/Components/Profile/p_Pass.svg",
+                        text: "Change Password",
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -246,14 +265,14 @@ class _O_ProfileState extends State<O_Profile> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const Language()),
+                            builder: (context) => const ChangePin()),
                       )
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: IconTextRow(
                         iconData:
-                            "Assets/Images/Components/Profile/p_Notifications.svg",
+                            "Assets/Images/Components/Profile/p_Pin.svg",
                         text: "Change your PIN",
                       ),
                     ),
@@ -280,11 +299,19 @@ class _O_ProfileState extends State<O_Profile> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: IconTextRow(
-                      iconData: "Assets/Images/Components/Profile/p_bank.svg",
-                      text: "Withdraw Funds",
+                  GestureDetector(
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WithdrawMain()),
+                      )
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: IconTextRow(
+                        iconData: "Assets/Images/Components/Profile/p_bank.svg",
+                        text: "Withdraw Funds",
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -312,7 +339,7 @@ class _O_ProfileState extends State<O_Profile> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  
+
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconTextRowSwitch(

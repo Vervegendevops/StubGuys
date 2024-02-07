@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/OTP.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/PickInterest/picInterest.dart';
 
 class OTP1 extends StatefulWidget {
@@ -49,7 +50,7 @@ class _OTP1State extends State<OTP1> {
                 Container(
                   height: 60,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(15.0),
                     border: Border.all(
                       color: Color(0xFFF1F1F2), // Change the border color
                       width: 1.0, // Adjust the border width as needed
@@ -113,7 +114,7 @@ class _OTP1State extends State<OTP1> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const picInterest()),
+                  MaterialPageRoute(builder: (context) => const otp()),
                 );
               },
               style: ElevatedButton.styleFrom(

@@ -41,9 +41,18 @@ dependencies:
   outline_material_icons: ^1.0.0
   cached_network_image: ^3.3.0
   carousel_slider: ^4.2.1
-  chewie: ^1.7.4
-  video_player: ^2.8.2
   country_code_picker: ^3.0.0
+
+  card_swiper: ^2.0.3
+  chewie: ^1.3.1
+  video_player: ^2.4.4
+  pinput: ^3.0.1
+  google_maps_flutter: ^2.5.3
+  qr_code_scanner: ^1.0.1
+  table_calendar: ^3.0.9
+  image_picker: ^0.8.4+4
+  dotted_line: ^3.2.2
+
 
 
 dev_dependencies:

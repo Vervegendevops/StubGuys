@@ -58,7 +58,7 @@ class _SplashWelcome0State extends State<SplashWelcome0>
           // Background Image
           Hero(
             tag: 'splashHero',
-            child: Image.asset(
+            child: Image.asset( 
               'Assets/Images/welcome2.jpg', // replace with your image asset
               fit: BoxFit.cover,
             ),

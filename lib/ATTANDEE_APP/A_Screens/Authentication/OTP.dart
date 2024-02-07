@@ -1,3 +1,4 @@
+import 'package:stub_guys/ATTANDEE_APP/A_Screens/Authentication/Components/Timer.dart';
 import 'package:stub_guys/ATTANDEE_APP/A_Screens/PickInterest/picInterest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -92,16 +93,7 @@ class _otpState extends State<otp> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.04,
                 ),
-                const Center(
-                  child: Text(
-                    '02:27',
-                    style: TextStyle(
-                      color: Color(0xFF8DC73F),
-                      fontSize: 16.0,
-                      fontFamily: 'SatoshiMedium',
-                    ),
-                  ),
-                ),
+                Center(child: TimerApp()),
                 const SizedBox(
                   height: 30,
                 ),

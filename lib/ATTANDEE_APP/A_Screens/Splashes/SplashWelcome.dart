@@ -33,7 +33,7 @@ class _SplashWelcomeState extends State<SplashWelcome> {
             children: [
               const Center(
                 child: Text(
-                  'Welcome to Stubguys',
+                  'Welcome to StubGuys',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32.0,
