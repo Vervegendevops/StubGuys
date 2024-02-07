@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/CreateEventsmain.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/Process/CE_Step1.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/Components/Charts/Demographic.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/Components/Charts/SalesChart.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/Dashboard/Components/Sales.dart';
@@ -168,33 +170,52 @@ class _O_DashboardState extends State<O_Dashboard> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        width: mQuery.size.width * 0.43,
-                        height: mQuery.size.height * 0.06,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: const Color(0xff96cc39)),
-                            borderRadius: BorderRadius.circular(15)),
-                        child: const Center(
-                          child: Text(
-                            "Manage Events",
-                            style: TextStyle(
-                                color: Color(0xff96cc39),
-                                fontWeight: FontWeight.w800),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>  CreateEventsMain()),
+                          );
+                        },
+                        child: Container(
+                          width: mQuery.size.width * 0.43,
+                          height: mQuery.size.height * 0.06,
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: const Color(0xff96cc39)),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Center(
+                            child: Text(
+                              "Manage Events",
+                              style: TextStyle(
+                                  color: Color(0xff96cc39),
+                                  fontWeight: FontWeight.w800),
+                            ),
                           ),
                         ),
                       ),
-                      Container(
-                        width: mQuery.size.width * 0.43,
-                        height: mQuery.size.height * 0.06,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(15)),
-                        child: const Center(
-                          child: Text(
-                            "Create New Event",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CE_Step1()),
+                          );
+                        },
+                        child: Container(
+                          width: mQuery.size.width * 0.43,
+                          height: mQuery.size.height * 0.06,
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Center(
+                            child: Text(
+                              "Create New Event",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
                           ),
                         ),
                       ),

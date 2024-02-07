@@ -51,6 +51,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
   table_calendar: ^3.0.9
   image_picker: ^0.8.4+4
+  dotted_line: ^3.2.2
 
 
 

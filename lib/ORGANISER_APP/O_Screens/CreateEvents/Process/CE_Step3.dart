@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/Components/HashTextField.dart';
+import 'package:stub_guys/ORGANISER_APP/O_Screens/CreateEvents/Process/CE_Step4.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'dart:io';
 
@@ -356,7 +357,7 @@ class _CE_Step3State extends State<CE_Step3> {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 1.0,
-                    height: MediaQuery.of(context).size.height * 0.065,
+                    height: MediaQuery.of(context).size.height * 0.2,
                     child: Theme(
                       data: ThemeData(
                         textTheme: const TextTheme(
@@ -369,21 +370,31 @@ class _CE_Step3State extends State<CE_Step3> {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFF8DC73F)),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFF8DC73F)),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          labelText: 'Keep it short and straight to the point',
-                          suffixIcon: SvgPicture.asset(
-                              "Assets/Images/Components/generate.svg"),
-                          floatingLabelBehavior: FloatingLabelBehavior.never,
-                        ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Color(0xFF8DC73F)),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Color(0xFF8DC73F)),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            labelText: '',
+                            suffixIcon: Padding(
+                              padding: const EdgeInsets.only(bottom: 16.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SvgPicture.asset(
+                                      "Assets/Images/Components/generate.svg"),
+                                ],
+                              ),
+                            ),
+                            floatingLabelBehavior: FloatingLabelBehavior.never,
+                            contentPadding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.height * 0.3,
+                                left: 16.0)),
                       ),
                     ),
                   ),
@@ -401,7 +412,7 @@ class _CE_Step3State extends State<CE_Step3> {
                     ],
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
+                    height: MediaQuery.of(context).size.height * 0.07,
                   ),
                   //buttons
                   Row(
@@ -426,7 +437,7 @@ class _CE_Step3State extends State<CE_Step3> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CE_Step3()),
+                                builder: (context) => const CE_Step4()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
